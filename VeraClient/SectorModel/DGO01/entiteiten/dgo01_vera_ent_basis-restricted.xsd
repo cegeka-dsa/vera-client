@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<schema version="1.0" xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        xmlns:base="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        targetNamespace="http://www.stichting-vera.nl/StUF/sector/vera/0310">
+
+  <include schemaLocation="../../VERA0301/entiteiten/vera0301_ent_basis.xsd" />
+  
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../0301/stuf0301.xsd"/>
+  <import schemaLocation="../../VERA0301/entiteiten/vera0301_stuf_simpleTypes.xsd" namespace="http://www.egem.nl/StUF/StUF0301" />
+
+  <annotation>
+    <documentation xml:lang="nl">
+      Bestand met kennisgevingberichten. Deze berichten zijn restricties op de horizontale varianten.
+    </documentation>
+  </annotation>
+
+  <!-- Onderhoud -->
+  <complexType name="ONDOND-restricted">
+    <annotation>
+      <documentation>Onderhoudsverzoeken</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:ONDOND-basis">
+        <sequence minOccurs="0">
+          <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:OnderhoudsverzoekbusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Onderhoudsverzoekcode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="omschrijving" type="VERA:Onderhoudsverzoekomschrijving-e" nillable="true" minOccurs="0"/>
+          <element name="onderhoudSoort" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+          <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="cluster" type="VERA:VASCLU-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <!--<element name="collectiefObject" type="VERA:VASCOL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <!--<element name="onderhoudsorders" type="VERA:ONDONDONDORD-basis" nillable="true" minOccurs="0" />-->
+          <element name="melddatum" type="VERA:Onderhoudsverzoekmelddatum-e" nillable="true" minOccurs="0"/>
+          <!--<element name="melder" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <!--<element name="standaardOnderhoudsorders" type="VERA:ONDONDONDSTA-basis" nillable="true" minOccurs="0" />
+          <element name="onderhoudsorderVoorcalculatie" type="VERA:ONDVOO-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="voorkeurAfspraken" type="VERA:ONDONDRELAFS-basis" nillable="true" minOccurs="0" />
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>        
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+    <complexType name="RELREL-restricted">
+    <annotation>
+      <documentation>Onderhoudsverzoeken</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:RELREL-basis">
+        <sequence minOccurs="0">
+          <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:RelatiebusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Relatiecode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <!--<element name="adressen" type="VERA:RELRELRELADR-basis" nillable="true" minOccurs="0" />-->
+          <element name="contactgegevens" type="VERA:RELRELRELCOG-basis" nillable="true" minOccurs="0" />
+          <element name="rollen" type="VERA:RELRELRELROL-basis" nillable="true" minOccurs="0" />
+          <element name="betaalgegevens" type="VERA:RELRELRELBET-basis" nillable="true" minOccurs="0" />
+          <element name="contactmomenten" type="VERA:RELRELRELCON-basis" nillable="true" minOccurs="0" />
+          <element name="afspraken" type="VERA:RELRELRELAFS-basis" nillable="true" minOccurs="0" />
+          <element name="groepen" type="VERA:RELRELRELGRO-basis" nillable="true" minOccurs="0" />
+          <element name="kenmerken" type="VERA:RELRELRELKEN-basis" nillable="true" minOccurs="0" />
+          <element name="inspecties" type="VERA:RELRELOVEINS-basis" nillable="true" minOccurs="0" />
+          <element name="overeenkomsten" type="VERA:RELRELOVEOVR-basis" nillable="true" minOccurs="0" />
+          <element name="onderhoudsverzoeken" type="VERA:RELRELONDOND-basis" nillable="true" minOccurs="0" />
+          <element name="soort" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  
+
+  <complexType name="ONDONDONDORD-restricted">
+    <annotation>
+      <documentation>Relatie onderhoudsverzoek naar onderhoudsorders</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:ONDONDONDORD-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="ONDONDRELAFS-restricted">
+    <complexContent>
+      <restriction base="VERA:ONDONDRELAFS-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="RELRELRELCOG-restricted">
+    <complexContent>
+      <restriction base="VERA:RELRELRELCOG-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+    <complexType name="RELRELRELADR-restricted">
+    <complexContent>
+      <restriction base="VERA:RELRELRELADR-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="RELADR-restricted">
+  <complexContent>
+    <restriction base="VERA:RELADR-basis">
+      <sequence minOccurs="0">
+        <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+        <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+        <element name="businessKey" type="VERA:RelatieAdresbusinessKey-e" nillable="true" minOccurs="0"/>
+        <element name="code" type="VERA:RelatieAdrescode-e" nillable="true" minOccurs="0"/>
+        <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+        <element name="soort" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+        <element name="relatie" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+        <!--<element name="adres" type="VERA:VASADR-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+        <element name="begindatum" type="VERA:RelatieAdresbegindatum-e" nillable="true" minOccurs="0"/>
+        <element name="einddatum" type="VERA:RelatieAdreseinddatum-e" nillable="true" minOccurs="0"/>
+        <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+        <element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      </sequence>
+    </restriction>
+  </complexContent>
+</complexType>
+
+</schema>

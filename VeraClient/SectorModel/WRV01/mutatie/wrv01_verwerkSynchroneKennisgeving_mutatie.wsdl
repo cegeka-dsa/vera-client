@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:WRV="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+             xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+             xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" name="StUF-VERA0301"
+             targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301">
+  <import namespace="http://www.egem.nl/StUF/StUF0301" location="../../0301/stuf0301_types.wsdl" />
+  <!--
+       <documentation>
+           Dit document definieert de webservices voor het portType VerwerkSynchroneKennisgeving voor het kennisgeving koppelvlak in het sectormodel Basisgegevens.
+       </documentation>
+   -->
+  <types>
+    <xs:schema>
+      <xs:import namespace="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301" schemaLocation="wrv01_msg_mutatie.xsd" />
+    </xs:schema>
+  </types>
+  <message name="wrvkanLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="WRV:wrvkanLk02" />
+  </message>
+  <message name="wrveenLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="WRV:wrveenLk02" />
+  </message>
+  <message name="wrvpubLk04" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="WRV:wrvpubLk04" />
+  </message>
+  <message name="wrvtoeLk04" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="WRV:wrvtoeLk04" />
+  </message>
+
+  <portType name="VerwerkSynchroneKennisgeving" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <documentation>
+      Dit portType ondersteunt als operaties alle synchrone kennisgeving en synchronisatieberichten gedefinieerd binnen het sectormodel
+    </documentation>
+    <operation name="wrveenLk02">
+      <input message="WRV:wrveenLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+    <operation name="wrvkanLk02">
+      <input message="WRV:wrvkanLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+    <operation name="wrvpubLk04">
+      <input message="WRV:wrvpubLk04" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+    <operation name="wrvtoeLk04">
+      <input message="WRV:wrvtoeLk04" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+  </portType>
+  <binding name="SOAPVerwerkSynchroneKennisgeving" type="WRV:VerwerkSynchroneKennisgeving" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <!--
+           <documentation>
+               Omdat de uit te wisselen berichten volledig gedefinieerd zijn in het sectormodel cq de StUF-standaard, kunnen we ze zonder verdere encoding (literal) opnemen in de body.
+               Niet ondersteunde berichten kunnen uit de binding en portType worden verwijderd.
+           </documentation>
+           -->
+    <operation name="wrvkanLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301/wrvkanLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+    <operation name="wrveenLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301/wrveenLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+    <operation name="wrvpubLk04">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301/wrvpubLk04" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+    <operation name="wrvtoeLk04">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301/wrvtoeLk04" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+  </binding>
+  <service name="VerwerkSynchroneKennisgeving">
+    <documentation>
+      Hieronder wordt de concreet aan te roepen service voor het ontvangen van synchrone VERA0301-kennisgeving- en synchronisatieberichten gedefinieerd.
+    </documentation>
+    <port name="VerwerkSynchroneKennisgeving" binding="WRV:SOAPVerwerkSynchroneKennisgeving">
+      <soap:address location="http://example.com/VerwerkSynchroneKennisgeving" />
+      <!--
+               <documentation>
+                  <wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+              </documentation>
+               -->
+    </port>
+  </service>
+</definitions>

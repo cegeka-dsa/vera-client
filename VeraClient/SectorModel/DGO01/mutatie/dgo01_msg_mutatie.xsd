@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:DGO="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301"
+        targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified"
+        version="1.0">
+
+  <include schemaLocation="dgo01_ent_mutatie.xsd"/>
+  
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="dgo01_msg_stuf_mutatie.xsd"/>
+
+  <element name="dgoondLk02">
+    <complexType>
+      <sequence>
+        <element type="StUF:DGOOND-StuurgegevensLk02" name="stuurgegevens"/>
+        <element type="StUF:ParametersLk02" name="parameters"/>
+        <element name="object" type="DGO:DGOOND-kennisgeving" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoplnLk02">
+    <complexType>
+      <sequence>
+        <element type="StUF:DGOPLN-StuurgegevensLk02" name="stuurgegevens"/>
+        <element type="StUF:ParametersLk02" name="parameters"/>
+        <element name="object" type="DGO:DGOPLN-kennisgeving" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoblgLk02">
+    <complexType>
+      <sequence>
+        <element type="StUF:DGOBLG-StuurgegevensLk02" name="stuurgegevens"/>
+        <element type="StUF:ParametersLk02" name="parameters"/>
+        <element name="object" type="DGO:DGOBLG-kennisgeving" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoafsLk02">
+    <complexType>
+      <sequence>
+        <element type="StUF:DGOAFS-StuurgegevensLk02" name="stuurgegevens"/>
+        <element type="StUF:ParametersLk02" name="parameters"/>
+        <element name="object" type="DGO:DGOAFS-kennisgeving" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoopmLk02">
+    <complexType>
+      <sequence>
+        <element type="StUF:DGOOPM-StuurgegevensLk02" name="stuurgegevens"/>
+        <element type="StUF:ParametersLk02" name="parameters"/>
+        <element name="object" type="DGO:DGOOPM-kennisgeving" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgotaaLk02">
+    <complexType>
+      <sequence>
+        <element type="StUF:DGOTAA-StuurgegevensLk02" name="stuurgegevens"/>
+        <element type="StUF:ParametersLk02" name="parameters"/>
+        <element name="object" type="DGO:DGOTAA-kennisgeving" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoopzLk02">
+    <complexType>
+      <sequence>
+        <element type="StUF:DGOOPZ-StuurgegevensLk02" name="stuurgegevens"/>
+        <element type="StUF:ParametersLk02" name="parameters"/>
+        <element name="object" type="DGO:DGOOPZ-kennisgeving" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgomstLk02">
+    <complexType>
+      <sequence>
+        <element type="StUF:DGOMST-StuurgegevensLk02" name="stuurgegevens"/>
+        <element type="StUF:ParametersLk02" name="parameters"/>
+        <element name="object" type="DGO:DGOMST-kennisgeving" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+</schema>

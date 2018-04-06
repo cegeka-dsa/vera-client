@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:WRV="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+        xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+        elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+  <include schemaLocation="../entiteiten/wrv01_ent_basis.xsd" />
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../VERA0301/entiteiten/vera0301_stuf_simpleTypes.xsd"/>
+  <annotation>
+    <documentation xml:lang="nl">
+      Bestand met kennisgevingberichten.
+    </documentation>
+  </annotation>
+  <!--ComplexTypes voor entiteittypen-->
+  <complexType name="WRVKAN-kennisgeving">
+    <complexContent>
+      <extension base="WRV:WOOKAN-basis">
+        <!--
+        De onderstaande attributes zijn al gedefinieerd in het horizontale secotrmodel.
+        <attribute ref="StUF:entiteittype" use="required" fixed="WOOKAN"/>
+        <attribute ref="StUF:noValue" use="optional"/>
+        <attribute ref="StUF:verwerkingssoort" use="required"/>-->
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVEEN-kennisgeving">
+    <complexContent>
+      <extension base="WRV:VASEEN-basis">
+        <!--
+        De onderstaande attributes zijn al gedefinieerd in het horizontale secotrmodel.
+        <attribute ref="StUF:entiteittype" use="required" fixed="VASEEN"/>
+        <attribute ref="StUF:noValue" use="optional"/>
+        <attribute ref="StUF:verwerkingssoort" use="required"/>-->
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="WRVPUB-kennisgeving">
+    <complexContent>
+      <extension base="WRV:WOOPUB-basis">
+        <!--
+        De onderstaande attributes zijn al gedefinieerd in het horizontale secotrmodel.
+        <attribute ref="StUF:entiteittype" use="required" fixed="WOOPUB"/>
+        <attribute ref="StUF:noValue" use="optional"/>
+        <attribute ref="StUF:verwerkingssoort" use="required"/>-->
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="WRVGBR-kennisgeving">
+    <complexContent>
+      <extension base="WRV:WOOHUI-basis">
+        <!--<attribute ref="StUF:entiteittype" use="required" fixed="WRVGBR"/>
+        <attribute ref="StUF:noValue" use="optional"/>
+        <attribute ref="StUF:verwerkingssoort" use="required"/>-->
+
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="WRVTOE-kennisgeving">
+    <complexContent>
+      <extension base="WRV:WOOTOE-basis">
+        <!--
+        De onderstaande attributes zijn al gedefinieerd in het horizontale secotrmodel.
+        <attribute ref="StUF:entiteittype" use="required" fixed="WOOTOE"/>
+        <attribute ref="StUF:noValue" use="optional"/>
+        <attribute ref="StUF:verwerkingssoort" use="required"/>-->
+      </extension>
+    </complexContent>
+  </complexType>
+</schema>

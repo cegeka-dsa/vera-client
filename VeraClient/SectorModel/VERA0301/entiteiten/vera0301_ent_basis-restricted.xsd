@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:StUF="http://www.egem.nl/StUF/StUF0301" xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310" targetNamespace="http://www.stichting-vera.nl/StUF/sector/vera/0310" elementFormDefault="qualified" attributeFormDefault="unqualified" version="031003">
+  <include schemaLocation="vera0301_simpleTypes.xsd"/>
+  <include schemaLocation="vera0301_ent_basis.xsd"/>
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="vera0301_stuf_simpleTypes.xsd"/>
+  <annotation>
+    <documentation xml:lang="nl">
+      Nieuw bestand dat restricties aangeeft op bestaande VERA klassen.
+    </documentation>
+  </annotation>
+  <complexType name="ALGREF-restricted">
+    <annotation>
+      <documentation>Entiteit om enkel waarden door te geven van referentiedata.</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:ALGREF-basis" >
+        <sequence minOccurs="0">
+          <element name="code" type="VERA:Referentiedatacode-e" nillable="true" minOccurs="0"/>
+          <element name="naam" type="VERA:Referentiedatanaam-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="ALGREFALGREF-restricted">
+    <annotation>
+      <documentation>Associatie naar Referentiedata</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:ALGREFALGREF-basis" >
+        <sequence>
+          <element name="referentiedata" type="VERA:ALGREF-restricted" minOccurs="0" maxOccurs="unbounded"  />
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

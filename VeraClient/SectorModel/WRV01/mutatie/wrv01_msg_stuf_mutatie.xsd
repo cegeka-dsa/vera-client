@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301" 
+        targetNamespace="http://www.egem.nl/StUF/StUF0301"
+        elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+  <annotation>
+    <documentation>
+      Nieuw bestand in verband met nieuwe werkwijze maken sectormodellen
+    </documentation>
+  </annotation>
+  <include schemaLocation="../../VERA0301/entiteiten/vera0301_stuf_simpleTypes.xsd"/>
+  
+  <!--Restrictions op in StUF gedefinieerde types-->  
+  <complexType name="WRVEEN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WRVEEN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVEEN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WRVEEN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="WRVKAN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WRVKAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVKAN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WRVKAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  
+  <complexType name="WRVPUB-StuurgegevensLk04">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk04">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk04"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="functie" type="StUF:Functie"/>          
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVPUB-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WRVPUB"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVPUB-StuurgegevensLk03">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk03">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk03"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="functie" type="StUF:Functie"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  
+  <complexType name="WRVTOE-StuurgegevensLk03">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk03">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk03"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="functie" type="StUF:Functie"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVTOE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WRVTOE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVTOE-StuurgegevensLk04">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk04">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk04"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="functie" type="StUF:Functie"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="WRVGBR-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WRVGBR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+</schema>

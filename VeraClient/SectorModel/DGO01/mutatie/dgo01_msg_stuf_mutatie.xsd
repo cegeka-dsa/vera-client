@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301" 
+        targetNamespace="http://www.egem.nl/StUF/StUF0301"
+        elementFormDefault="qualified" 
+        attributeFormDefault="unqualified" 
+        version="1.0">
+
+  <annotation>
+    <documentation>
+      Nieuw bestand in verband met nieuwe werkwijze maken sectormodellen
+    </documentation>
+  </annotation>
+
+  <!--<import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../0301/stuf0301.xsd"/>-->
+  <include schemaLocation="../../0301/stuf0301.xsd"/>
+  
+  
+  <!--Restrictions op in StUF gedefinieerde types-->  
+
+  <complexType name="DGOOND-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DGOOND"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOPLN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DGOPLN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOBLG-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DGOBLG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOAFS-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DGOAFS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOOPM-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DGOOPM"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOTAA-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DGOTAA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOOPZ-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DGOOPZ"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOMST-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DGOMST"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+</schema>

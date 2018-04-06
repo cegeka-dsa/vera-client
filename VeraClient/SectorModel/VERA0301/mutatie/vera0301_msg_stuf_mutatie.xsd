@@ -1,0 +1,3454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:StUF="http://www.egem.nl/StUF/StUF0301" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.egem.nl/StUF/StUF0301" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.1">
+  <annotation>
+    <documentation>
+      Nieuw bestand in verband met nieuwe werkwijze maken sectormodellen
+    </documentation>
+  </annotation>
+  <include schemaLocation="../entiteiten/vera0301_stuf_simpleTypes.xsd"/>
+  <!--Restrictions op in StUF gedefinieerde types-->
+  <complexType name="ALGREF-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ALGREF"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ALGREF-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ALGREF"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ALGBRO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ALGBRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ALGBRO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ALGBRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ALGAUD-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ALGAUD"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ALGAUD-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ALGAUD"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELREL-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELREL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELREL-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELREL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELNAT-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELNAT"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELNAT-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELNAT"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELREC-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELREC"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELREC-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELREC"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELGRO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELGRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELGRO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELGRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELROL-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELROL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELROL-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELROL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELCON-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELCON"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELCON-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELCON"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELADR-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELADR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELADR-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELADR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELCOG-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELCOG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELCOG-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELCOG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELTEL-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELTEL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELTEL-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELTEL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELAFS-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELAFS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELAFS-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELAFS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELBET-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELBET"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELBET-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELBET"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELINK-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELINK"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELINK-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELINK"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELREG-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELREG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELREG-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELREG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELOPL-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELOPL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELOPL-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELOPL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELSIG-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELSIG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELSIG-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELSIG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELKEN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELKEN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELKEN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="RELKEN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOPUB-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOPUB"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOPUB-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOPUB"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOREA-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOREA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOREA-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOREA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOKAN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOKAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOKAN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOKAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOAAN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOAAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOAAN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOAAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOTOE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOTOE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOTOE-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOTOE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOREG-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOREG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOREG-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOREG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOVOO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOVOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOVOO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOVOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOPRO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOPRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOPRO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOPRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEOVE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEOVE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEOVE-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEOVE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEHUU-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEHUU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEHUU-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEHUU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVESER-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVESER"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVESER-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVESER"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEKOO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEKOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEKOO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEKOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEOND-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEOND"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEOND-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEOND"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEINS-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEINS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEINS-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEINS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVETOE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVETOE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVETOE-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVETOE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEGES-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEGES"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEGES-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEGES"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEUIT-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEUIT"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEUIT-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEUIT"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEACT-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEACT"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEACT-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEACT"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEPRI-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEPRI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEPRI-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEPRI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEOVR-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEOVR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEOVR-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="OVEOVR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDOND-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDOND"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDOND-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDOND"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDORD-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDORD"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDORD-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDORD"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDTAA-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDTAA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDTAA-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDTAA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDBES-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDBES"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDBES-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDBES"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDSTA-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDSTA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDSTA-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDSTA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDVOO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDVOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ONDVOO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ONDVOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASADR-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASADR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASADR-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASADR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBAG-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBAG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBAG-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBAG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASOBJ-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASOBJ"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASOBJ-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASOBJ"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBOU-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBOU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBOU-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBOU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASELE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASELE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASELE-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASELE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASCOL-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASCOL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASCOL-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASCOL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASCLU-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASCLU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASCLU-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASCLU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASEEN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASEEN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASEEN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASEEN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASREN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASREN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASREN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASREN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASVOO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASVOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASVOO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASVOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASENE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASENE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASENE-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASENE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGAR-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGAR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGAR-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGAR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGEB-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGEB"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGEB-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGEB"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASPAN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASPAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASPAN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASPAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBAP-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBAP"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBAP-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBAP"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASVER-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASVER"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASVER-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASVER"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASTAX-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASTAX"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASTAX-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASTAX"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASKEN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASKEN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASKEN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASKEN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBUU-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBUU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBUU-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBUU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWIJ-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWIJ"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWIJ-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWIJ"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWOO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWOO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWOO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBAW-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBAW"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBAW-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBAW"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASSTA-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASSTA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASSTA-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASSTA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGEM-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGEM"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGEM-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGEM"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWOZ-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWOZ"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWOZ-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWOZ"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGEO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGEO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGEO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGEO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASPUN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASPUN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASPUN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASPUN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWON-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWON"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWON-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWON"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASCRI-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASCRI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASCRI-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASCRI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASRES-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASRES"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASRES-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASRES"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGRO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGRO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASGRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWAA-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWAA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWAA-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASWAA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASTOE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASTOE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASTOE-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASTOE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINFIN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINFIN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINFIN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINFIN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINGRE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINGRE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINGRE-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINGRE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINVER-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINVER"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINVER-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINVER"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOJ-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOJ"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOJ-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOJ"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOP-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOP"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOP-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOP"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOS-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOS-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBEG-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBEG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBEG-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBEG"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINGRO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINGRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINGRO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINGRO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINCRE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINCRE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINCRE-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINCRE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINDEB-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINDEB"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINDEB-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINDEB"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIOP-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIOP"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIOP-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIOP"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIOR-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIOR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIOR-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIOR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIFA-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIFA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIFA-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIFA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIFR-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIFR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIFR-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIFR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIFB-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIFB"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINIFB-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINIFB"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBEO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBEO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBEO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBEO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINAAN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINAAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINAAN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINAAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBTW-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBTW"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBTW-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBTW"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBAN-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBAN-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBAN"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBAR-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBAR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBAR-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBAR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOE-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOE-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOE"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOD-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOD"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBOD-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBOD"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINAFL-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINAFL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINAFL-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINAFL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBER-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBER"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBER-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBER"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBET-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBET"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINBET-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINBET"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINEXI-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINEXI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINEXI-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINEXI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINEXA-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINEXA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FINEXA-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FINEXA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FININO-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FININO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FININO-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FININO"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FININM-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FININM"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="FININM-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="FININM"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSDOS-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSDOS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSDOS-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSDOS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSINF-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSINF"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSINF-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSINF"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSINK-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSINK"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSINK-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSINK"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSPRC-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSPRC"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSPRC-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSPRC"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSPRL-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSPRL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSPRL-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSPRL"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSPRS-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSPRS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSPRS-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSPRS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAA-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAA-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAA"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAK-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAK"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAK-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAK"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAR-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAR-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAR"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAS-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAS-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAT-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAT"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSZAT-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="DOSZAT"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOHUI-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOHUI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOHUI-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="WOOHUI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASPOS-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASPOS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASPOS-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASPOS"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBUI-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBUI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBUI-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASBUI"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASENP-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASENP"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASENP-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="VASENP"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ALGSTU-StuurgegevensLk01">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk01">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk01"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ALGSTU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ALGSTU-StuurgegevensLk02">
+    <complexContent>
+      <restriction base="StUF:StuurgegevensLk02">
+        <sequence>
+          <element name="berichtcode" type="StUF:Berichtcode" fixed="Lk02"/>
+          <element name="zender" type="StUF:Systeem"/>
+          <element name="ontvanger" type="StUF:Systeem"/>
+          <element name="referentienummer" type="StUF:Refnummer"/>
+          <element name="tijdstipBericht" type="StUF:Tijdstip"/>
+          <element name="entiteittype" type="StUF:Entiteittype" fixed="ALGSTU"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+       xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        xmlns:WRV="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+        xmlns:base="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+        targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+        elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+        
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../VERA0301/entiteiten/vera0301_stuf_simpleTypes.xsd"/>
+  <annotation>
+    <documentation xml:lang="nl">Verticaal sectormodel simpletypes
+    </documentation>
+  </annotation>
+
+  <!--ComplexTypes voor metagegevens-->
+  <complexType name="Kandidaataantalvolwassenen-e">
+    <simpleContent>
+      <extension base="WRV:Kandidaataantalvolwassenen">
+        <attributeGroup ref="StUF:element"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+  <complexType name="Kandidaataantalkinderen-e">
+    <simpleContent>
+      <extension base="WRV:Kandidaataantalkinderen">
+        <attributeGroup ref="StUF:element"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+  <complexType name="KandidaatverzamelinkomenEU-e">
+    <simpleContent>
+      <extension base="WRV:KandidaatverzamelinkomenEU">
+        <attributeGroup ref="StUF:element"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+  <complexType name="Kandidaatverzamelinkomen-e">
+    <simpleContent>
+      <extension base="WRV:Kandidaatverzamelinkomen">
+        <attributeGroup ref="StUF:element"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+ 
+ 
+  <!-- Simple Types voor metagegevens-->
+  <simpleType name="Kandidaataantalvolwassenen">
+    <restriction base="int">
+    </restriction>
+  </simpleType>
+  <simpleType name="Kandidaataantalkinderen">
+    <restriction base="int">
+    </restriction>
+  </simpleType>
+  <simpleType name="KandidaatverzamelinkomenEU">
+    <restriction base="decimal">
+    </restriction>
+  </simpleType>
+  <simpleType name="Kandidaatverzamelinkomen">
+    <restriction base="decimal">
+    </restriction>
+  </simpleType>
+ 
+  
+</schema>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        xmlns:WRV="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+        targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+        elementFormDefault="qualified" 
+        attributeFormDefault="unqualified" 
+        version="1.0">
+  <include schemaLocation="wrv01_ent_mutatie.xsd"/>
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="wrv01_msg_stuf_mutatie.xsd"/>
+  <annotation>
+    <documentation xml:lang="nl">
+      Nieuw bestand in verband met nieuwe werkwijze maken sectormodellen
+    </documentation>
+  </annotation>
+  <element name="wrvkanLk01" type="WRV:WRVKAN-Lk01"/>
+  <element name="wrvkanLk02" type="WRV:WRVKAN-Lk02"/>
+  <element name="wrveenLk01" type="WRV:WRVEEN-Lk01"/>
+  <element name="wrveenLk02" type="WRV:WRVEEN-Lk02"/>
+  <element name="wrvpubLk03" type="WRV:WRVPUB-Lk03"/>
+  <element name="wrvpubLk04" type="WRV:WRVPUB-Lk04"/>
+  <element name="wrvtoeLk03" type="WRV:WRVTOE-Lk03"/>
+  <element name="wrvtoeLk04" type="WRV:WRVTOE-Lk04"/>
+
+  <complexType name="WRVKAN-Lk01">
+    <sequence>
+      <element type="StUF:WRVKAN-StuurgegevensLk01" name="stuurgegevens"/>
+      <element type="StUF:ParametersLk01" name="parameters"/>
+      <element name="object" type="WRV:WRVKAN-kennisgeving" nillable="true" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="WRVKAN-Lk02">
+    <sequence>
+      <element name="stuurgegevens" type="StUF:WRVKAN-StuurgegevensLk02"/>
+      <element name="parameters" type="StUF:ParametersLk02"/>
+      <element name="object" type="WRV:WRVKAN-kennisgeving" nillable="true" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="WRVKAN-Lk02T">
+    <complexContent>
+      <restriction base="WRV:WRVKAN-Lk02">
+        <sequence>
+          <element name="stuurgegevens" type="StUF:WRVKAN-StuurgegevensLk02"/>
+          <element name="parameters" type="StUF:ParametersLk02TInSx02"/>
+          <element name="object" type="WRV:WRVKAN-kennisgeving"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVKAN-Lk02W">
+    <complexContent>
+      <restriction base="WRV:WRVKAN-Lk02">
+        <sequence>
+          <element name="stuurgegevens" type="StUF:WRVKAN-StuurgegevensLk02"/>
+          <element name="parameters" type="StUF:ParametersLk02WInSx02"/>
+          <element name="object" type="WRV:WRVKAN-kennisgeving" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="WRVEEN-Lk01">
+    <sequence>
+      <element type="StUF:WRVEEN-StuurgegevensLk01" name="stuurgegevens"/>
+      <element type="StUF:ParametersLk01" name="parameters"/>
+      <element name="object" type="WRV:WRVEEN-kennisgeving" nillable="true" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="WRVEEN-Lk02">
+    <sequence>
+      <element name="stuurgegevens" type="StUF:WRVEEN-StuurgegevensLk02"/>
+      <element name="parameters" type="StUF:ParametersLk02"/>
+      <element name="object" type="WRV:WRVEEN-kennisgeving" nillable="true" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="WRVEEN-Lk02T">
+    <complexContent>
+      <restriction base="WRV:WRVEEN-Lk02">
+        <sequence>
+          <element name="stuurgegevens" type="StUF:WRVEEN-StuurgegevensLk02"/>
+          <element name="parameters" type="StUF:ParametersLk02TInSx02"/>
+          <element name="object" type="WRV:WRVEEN-kennisgeving"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVEEN-Lk02W">
+    <complexContent>
+      <restriction base="WRV:WRVEEN-Lk02">
+        <sequence>
+          <element name="stuurgegevens" type="StUF:WRVEEN-StuurgegevensLk02"/>
+          <element name="parameters" type="StUF:ParametersLk02WInSx02"/>
+          <element name="object" type="WRV:WRVEEN-kennisgeving" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="WRVTOE-Lk01">
+    <sequence>
+      <element type="StUF:WRVTOE-StuurgegevensLk01" name="stuurgegevens"/>
+      <element type="StUF:ParametersLk01" name="parameters"/>
+      <element name="object" type="WRV:WRVTOE-kennisgeving" nillable="true" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="WRVTOE-Lk03">
+    <sequence>
+      <element name="stuurgegevens" type="StUF:WRVTOE-StuurgegevensLk03"/>
+      <!--<element name="parameters" type="StUF:ParametersLk01"/>-->
+      <!--<element name="object" type="WRV:WRVTOE-kennisgeving" maxOccurs="1" nillable="true"/>-->
+      <element name="WRVTOE-Lk01" type="WRV:WRVTOE-Lk01" maxOccurs="1" nillable="true"/>
+      <element name="WRVEEN-Lk01" type="WRV:WRVEEN-Lk01" maxOccurs="1" nillable="true"/>
+      <element name="WRVKAN-Lk01" type="WRV:WRVKAN-Lk01" maxOccurs="1" nillable="true"/>
+    </sequence>
+  </complexType>
+  <complexType name="WRVTOE-Lk04">
+    <sequence>
+      <element name="stuurgegevens" type="StUF:WRVTOE-StuurgegevensLk04"/>
+      <!--<element name="parameters" type="StUF:ParametersLk02"/>-->
+      <!--<element name="object" type="WRV:WRVTOE-kennisgeving" maxOccurs="1" nillable="true"/>-->
+      <element name="WRVTOE-Lk01" type="WRV:WRVTOE-Lk01" maxOccurs="1" nillable="true"/>
+      <element name="WRVEEN-Lk01" type="WRV:WRVEEN-Lk01" maxOccurs="1" nillable="true"/>
+      <element name="WRVKAN-Lk01" type="WRV:WRVKAN-Lk01" maxOccurs="1" nillable="true"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="WRVPUB-Lk03">
+    <sequence>
+      <element name="stuurgegevens" type="StUF:WRVPUB-StuurgegevensLk03"/>
+      <!--<element name="parameters" type="StUF:ParametersLk01"/>-->
+      <!--<element name="object" type="WRV:WRVPUB-kennisgeving" maxOccurs="1" nillable="true"/>-->
+      <element name="WRVPUB-Lk01" type="WRV:WRVPUB-Lk01" maxOccurs="1" nillable="true"/>
+      <element name="WRVEEN-Lk01" type="WRV:WRVEEN-Lk01" maxOccurs="1" nillable="true"/>
+      <element name="WRVGBR-Lk01" type="WRV:WRVGBR-Lk01" maxOccurs="1" nillable="true"/>
+    </sequence>
+  </complexType>
+  <complexType name="WRVPUB-Lk04">
+    <sequence>
+      <element name="stuurgegevens" type="StUF:WRVPUB-StuurgegevensLk04"/>
+      <!--<element name="parameters" type="StUF:ParametersLk02"/>-->
+      <!--<element name="object" type="WRV:WRVPUB-kennisgeving" maxOccurs="1" nillable="true"/>-->
+      <element name="WRVPUB-Lk01" type="WRV:WRVPUB-Lk01" maxOccurs="1" nillable="true"/>
+      <element name="WRVEEN-Lk01" type="WRV:WRVEEN-Lk01" maxOccurs="1" nillable="true"/>
+      <element name="WRVGBR-Lk01" type="WRV:WRVGBR-Lk01" maxOccurs="1" nillable="true"/>
+    </sequence>
+  </complexType>
+  <complexType name="WRVPUB-Lk01">
+    <sequence>
+      <element type="StUF:WRVPUB-StuurgegevensLk01" name="stuurgegevens"/>
+      <element type="StUF:ParametersLk01" name="parameters"/>
+      <element name="object" type="WRV:WRVPUB-kennisgeving" nillable="true" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="WRVGBR-Lk01">
+    <sequence>
+      <element type="StUF:WRVGBR-StuurgegevensLk01" name="stuurgegevens"/>
+      <element type="StUF:ParametersLk01" name="parameters"/>
+      <element name="object" type="WRV:WRVGBR-kennisgeving" nillable="true" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+</schema>

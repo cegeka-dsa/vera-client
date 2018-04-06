@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310" xmlns:StUF="http://www.egem.nl/StUF/StUF0301" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="StUF-VERA0310" targetNamespace="http://www.stichting-vera.nl/StUF/sector/vera/0310">
+   <import namespace="http://www.egem.nl/StUF/StUF0301" location="../../0301/stuf0301_types.wsdl" />
+       <!--
+       <documentation>
+           Dit document definieert de webservices voor het portType BeantwoordVraag voor het sectormodel Basisgegevens voor het koppelvlak vraagAntwoord.
+           Versie 031002, wijzigingen vergeleken met versie 031000:
+           - ERR206: Import gewijzigd n.a.v. naamwijziging van het bestand 'stuf0301.types.wsdl' in 'stuf0301_types.wsdl'.
+       </documentation>
+       -->
+       <types>
+           <xs:schema>
+               <xs:import namespace="http://www.stichting-vera.nl/StUF/sector/vera/0310" schemaLocation="vera0301_msg_vraagAntwoord.xsd" />
+           </xs:schema>
+       </types>
+
+        <message name="vaseenLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+            <part name="body" element="VERA:vaseenLa01" />
+        </message>
+
+        <message name="vaseenLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+            <part name="body" element="VERA:vaseenLv01" />
+        </message>
+
+	<portType name="BeantwoordVraag" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+		<documentation>
+                Dit portType ondersteunt als operaties alle synchrone vraagberichten gedefinieerd binnen het sectormodel
+		</documentation>
+
+		<operation name="vaseenLv01">
+			<input message="VERA:vaseenLv01" />
+			<output message="VERA:vaseenLa01" />
+			<fault name="fout" message="StUF:Fo02" />
+		</operation>
+	</portType>
+
+    <binding name="SOAPBeantwoordVraag" type="VERA:BeantwoordVraag" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<!--
+            <documentation>
+                Omdat de uit te wisselen berichten volledig gedefinieerd zijn in het sectormodel cq de StUF-standaard, kunnen we ze zonder verdere encoding (literal) opnemen in de body.
+                Niet ondersteunde berichten kunnen uit de binding en portType worden verwijderd.
+            </documentation>
+             -->
+		
+		<operation name="vaseenLv01">
+			<soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaseenLv01" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+			<fault name="fout">
+				<soap:fault name="fout" use="literal" />
+			</fault>
+		</operation>
+	</binding>
+
+        <service name="BeantwoordVraag">
+            <documentation>
+                Hieronder wordt de concreet aan te roepen service voor het ontvangen van synchrone BG0301-vraagberichten gedefinieerd.
+            </documentation>
+            <port name="BeantwoordVraag" binding="VERA:SOAPBeantwoordVraag">
+                <soap:address location="http://example.com/BeantwoordVraag" />
+                    <!--
+                    <documentation>
+                        <wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+                    </documentation>
+                    -->
+            </port>
+        </service>
+</definitions>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:DGO="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301"
+             xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" name="StUF-VERA0301"
+             targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301">
+
+  <import namespace="http://www.egem.nl/StUF/StUF0301" location="../../0301/stuf0301_types.wsdl" />
+
+  <types>
+    <xs:schema>
+      <xs:import namespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301" schemaLocation="dgo01_msg_mutatie.xsd" />
+    </xs:schema>
+  </types>
+
+  <message name="dgoondLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="DGO:dgoondLk02" />
+  </message>
+  
+  <message name="dgoplnLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="DGO:dgoplnLk02" />
+  </message>
+  
+  <message name="dgoblgLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="DGO:dgoblgLk02" />
+  </message>
+
+  <message name="dgoafsLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="DGO:dgoafsLk02" />
+  </message>
+
+  <message name="dgoopmLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="DGO:dgoopmLk02" />
+  </message>
+
+  <message name="dgotaaLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="DGO:dgotaaLk02" />
+  </message>
+
+  <message name="dgoopzLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="DGO:dgoopzLk02" />
+  </message>
+  
+  <message name="dgomstLk02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <part name="body" element="DGO:dgomstLk02" />
+  </message>  
+
+
+  <portType name="VerwerkSynchroneKennisgeving" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <operation name="dgoplnLk02">
+      <input message="DGO:dgoplnLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+
+    <operation name="dgoondLk02">
+      <input message="DGO:dgoondLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+
+    <operation name="dgoblgLk02">
+      <input message="DGO:dgoblgLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+
+    <operation name="dgoafsLk02">
+      <input message="DGO:dgoafsLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+
+    <operation name="dgoopmLk02">
+      <input message="DGO:dgoopmLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+
+    <operation name="dgotaaLk02">
+      <input message="DGO:dgotaaLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+
+    <operation name="dgoopzLk02">
+      <input message="DGO:dgoopzLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>
+    
+    <operation name="dgomstLk02">
+      <input message="DGO:dgomstLk02" />
+      <output message="StUF:Bv02" />
+      <fault name="fout" message="StUF:Fo02" />
+    </operation>  
+
+  </portType>
+
+  <binding name="SOAPVerwerkSynchroneKennisgeving" type="DGO:VerwerkSynchroneKennisgeving" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+
+    <operation name="dgoondLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoondLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+    <operation name="dgoplnLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoplnLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+    <operation name="dgoblgLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoblgLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+    <operation name="dgoafsLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoafsLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+    <operation name="dgoopmLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoopmLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+    <operation name="dgotaaLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgotaaLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+    <operation name="dgoopzLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoopzLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+    
+    <operation name="dgomstLk02">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgomstLk02" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>  
+    
+  </binding>
+
+  <service name="VerwerkSynchroneKennisgeving">
+    <documentation>
+      Hieronder wordt de concreet aan te roepen service voor het ontvangen van synchrone VERA0301-kennisgeving- en synchronisatieberichten gedefinieerd.
+    </documentation>
+    <port name="VerwerkSynchroneKennisgeving" binding="DGO:SOAPVerwerkSynchroneKennisgeving">
+      <soap:address location="https://vera.meerstedewonen.nl/dgo" />
+    </port>
+  </service>
+</definitions>

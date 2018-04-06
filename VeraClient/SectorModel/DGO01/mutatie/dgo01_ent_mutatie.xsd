@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:DGO="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301"
+        xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301"
+        elementFormDefault="qualified" 
+        attributeFormDefault="unqualified" 
+        version="1.0">
+
+  <include schemaLocation="../entiteiten/dgo01_ent_basis.xsd" />
+  <include schemaLocation="../entiteiten/dgo01_simpleTypes.xsd" />
+  <import namespace="http://www.stichting-vera.nl/StUF/sector/vera/0310" schemaLocation="../../VERA0301/entiteiten/vera0301_ent_basis.xsd" />
+  
+  <complexType name="DGOOND-kennisgeving">
+    <complexContent>
+      <extension base="DGO:DGOOND-basis">
+        <sequence minOccurs="0">
+          <element name="annuleringsReden" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="annuleringsOmschrijving" type="DGO:AnnuleringsOmschrijving-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="afspraak" type="VERA:RELAFS-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOPLN-kennisgeving">
+    <complexContent>
+      <extension base="DGO:DGOPLN-basis">
+        <sequence>
+          <element name="huurder" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOBLG-kennisgeving">
+    <sequence>
+      <element name="afspraak" type="VERA:RELAFS-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="onderhoudsverzoek" type="VERA:ONDOND-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="onderhoudstaak" type="VERA:ONDTAA-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="bijlagen" type="DGO:DGOBLGDGOBLG-basis" nillable="true" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOAFS-kennisgeving">
+    <sequence>
+      <element name="afspraak" type="DGO:DGOAFS-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOOPM-kennisgeving">
+    <sequence>
+      <element name="afspraak" type="VERA:RELAFS-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="onderhoudsverzoek" type="VERA:ONDOND-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="onderhoudstaak" type="VERA:ONDTAA-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="opmerkingen" type="DGO:DGOONDDGOOPM-basis" nillable="true" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  
+  <complexType name="DGOTAA-kennisgeving">
+    <sequence>
+      <element name="afspraak" type="VERA:RELAFS-kerngegevens" nillable="true" minOccurs="1" maxOccurs="1"/>
+      <element name="onderhoudstaak" type="DGO:DGOTAA-basis" nillable="true" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOOPZ-kennisgeving">
+    <sequence>
+      <element name="afspraak" type="VERA:RELAFS-kerngegevens" nillable="true" minOccurs="1" maxOccurs="1"/>
+      <element name="opzegging" type="DGO:DGOOPZ-basis" nillable="true" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOMST-kennisgeving">
+    <sequence>
+      <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="1" maxOccurs="1"/>
+      <element name="meterstanden" type="DGO:DGOMSTDGOMST-basis" nillable="true" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+</schema>

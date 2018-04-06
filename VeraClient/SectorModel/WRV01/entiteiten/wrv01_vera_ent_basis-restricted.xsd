@@ -1,0 +1,997 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<schema version="1.0" xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        xmlns:base="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        targetNamespace="http://www.stichting-vera.nl/StUF/sector/vera/0310">
+  <include schemaLocation="../../VERA0301/entiteiten/vera0301_ent_basis-restricted.xsd" />
+  <include schemaLocation="../../VERA0301/entiteiten/vera0301_ent_basis.xsd" />
+  <import schemaLocation="../../VERA0301/entiteiten/vera0301_stuf_simpleTypes.xsd" namespace="http://www.egem.nl/StUF/StUF0301" />
+  <annotation>
+    <documentation xml:lang="nl">
+      Bestand met kennisgevingberichten. Deze berichten zijn restricties op de horizontale varianten.
+    </documentation>
+  </annotation>
+  <!-- Vastgoed -->
+  <complexType name="VASPUN-restricted">
+    <annotation>
+      <documentation>Punt</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASPUN-basis">
+        <sequence minOccurs="0">
+          <!-- <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+           <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+           <element name="businessKey" type="VERA:GeometriebusinessKey-e" nillable="true" minOccurs="0"/>
+           <element name="code" type="VERA:Geometriecode-e" nillable="true" minOccurs="0"/>
+           <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="omschrijving" type="VERA:Geometrieomschrijving-e" minOccurs="0" nillable="true" />-->
+          <element name="soort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="lengtegraad" type="VERA:Puntlengtegraad-e" minOccurs="0" nillable="true" />
+          <element name="breedtegraad" type="VERA:Puntbreedtegraad-e" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASVOO-restricted">
+    <annotation>
+      <documentation>EenheidVoorwaarden</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASVOO-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+           <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+           <element name="businessKey" type="VERA:EenheidVoorwaardenbusinessKey-e" nillable="true" minOccurs="0"/>
+           <element name="code" type="VERA:EenheidVoorwaardencode-e" nillable="true" minOccurs="0"/>
+           <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="minimumAantalPersonen" type="VERA:EenheidVoorwaardenminimumAantalPersonen-e" minOccurs="0" nillable="true" />
+          <element name="maximumAantalPersonen" type="VERA:EenheidVoorwaardenmaximumAantalPersonen-e" minOccurs="0" nillable="true" />
+          <element name="minimumleeftijd" type="VERA:EenheidVoorwaardenminimumleeftijd-e" minOccurs="0" nillable="true" />
+          <element name="maximunleeftijd" type="VERA:EenheidVoorwaardenmaximunleeftijd-e" minOccurs="0" nillable="true" />
+          <element name="minimuminkomen" type="VERA:EenheidVoorwaardenminimuminkomen-e" minOccurs="0" nillable="true" />
+          <element name="maximuminkomen" type="VERA:EenheidVoorwaardenmaximuminkomen-e" minOccurs="0" nillable="true" />
+          <!--<element name="voorrangscriteria" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+           <element name="selectiecriteria" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASCLU-restricted">
+    <annotation />
+    <complexContent>
+      <restriction base="VERA:VASCLU-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+           <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+           <element name="businessKey" type="VERA:ClusterbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Clustercode-e" minOccurs="0" nillable="true" />
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="naam" type="VERA:Clusternaam-e" minOccurs="0" nillable="true" />
+          <!--<element name="omschrijving" type="VERA:Clusteromschrijving-e" nillable="true" minOccurs="0"/>
+           <element name="bovenliggendeCluster" type="VERA:VASCLU-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="deelClusters" type="VERA:VASCLUVASCLU-basis" nillable="true" minOccurs="0" />
+           <element name="eenheden" type="VERA:VASCLUVASEEN-basis" nillable="true" minOccurs="0" />
+           <element name="collectieveObjecten" type="VERA:VASCLUVASCOL-basis" nillable="true" minOccurs="0" />
+           <element name="garanties" type="VERA:VASCLUVASGAR-basis" nillable="true" minOccurs="0" />
+           <element name="begindatum" type="VERA:Clusterbegindatum-e" nillable="true" minOccurs="0"/>
+           <element name="einddatum" type="VERA:Clustereinddatum-e" nillable="true" minOccurs="0"/>
+                    <element name="geometrie" type="VERA:VASGEO-kerngegevens" minOccurs="0" maxOccurs="1" nillable="true" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASEEN-restricted">
+    <annotation />
+    <complexContent>
+      <restriction base="VERA:VASEEN-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+           <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+           <element name="businessKey" type="VERA:EenheidbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Eenheidcode-e" minOccurs="0" nillable="true" />
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="detailSoort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="status" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="detailStatus" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="naam" type="VERA:Eenheidnaam-e" minOccurs="0" nillable="true" />
+          <element name="omschrijving" type="VERA:Eenheidomschrijving-e" minOccurs="0" nillable="true" />
+          <!--<element name="adres" type="VERA:VASADR-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="nevenadressen" type="VERA:VASEENVASADR-basis" nillable="true" minOccurs="0" />-->
+          <element name="kadastraalNummer" type="VERA:EenheidkadastraalNummer-e" minOccurs="0" nillable="true" />
+          <!--<element name="panden" type="VERA:VASEENVASPAN-basis" nillable="true" minOccurs="0" />
+           <element name="bovenliggendeEenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="deelEenheden" type="VERA:VASEENVASEEN-basis" nillable="true" minOccurs="0" />
+           <element name="clusters" type="VERA:VASEENVASCLU-basis" nillable="true" minOccurs="0" />
+           <element name="eigenaar" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="beheerder" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="gebouw" type="VERA:VASGEB-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="collectieveObjecten" type="VERA:VASEENVASCOL-basis" nillable="true" minOccurs="0" />
+           <element name="wozEenheden" type="VERA:VASEENVASWOZ-basis" nillable="true" minOccurs="0" />-->
+          <element name="rayon" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <!--<element name="buurt" type="VERA:VASBUU-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="wijk" type="VERA:VASWIJ-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="corporatieBuurt" type="VERA:VASBUU-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="corporatieWijk" type="VERA:VASWIJ-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="adresseerbaarObjectBasisregistratie" type="VERA:VASOBJ-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="volgnummer" type="VERA:Eenheidvolgnummer-e" nillable="true" minOccurs="0"/>-->
+          <element name="etage" type="VERA:Eenheidetage-e" minOccurs="0" nillable="true" />
+          <element name="inExploitatieReden" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="uitExploitatieReden" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="inExploitatiedatum" type="VERA:EenheidinExploitatiedatum-e" minOccurs="0" nillable="true" />
+          <element name="uitExploitatiedatum" type="VERA:EenheiduitExploitatiedatum-e" minOccurs="0" nillable="true" />
+          <!--<element name="onderhoudslabel" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+           <element name="marktlabel" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>-->
+          <element name="bewoonbareVertrekkenTotaalInhoud" type="VERA:EenheidbewoonbareVertrekkenTotaalInhoud-e" minOccurs="0" nillable="true" />
+          <!--<element name="vertrekken" type="VERA:VASEENVASVER-basis" nillable="true" minOccurs="0" />-->
+          <element name="kamersAantal" type="VERA:EenheidkamersAantal-e" minOccurs="0" nillable="true" />
+          <element name="verwarmdeVertrekkenAantal" type="VERA:EenheidverwarmdeVertrekkenAantal-e" minOccurs="0" nillable="true" />
+          <element name="totaleOppervlakte" type="VERA:EenheidtotaleOppervlakte-e" minOccurs="0" nillable="true" />
+          <element name="woonvertrekInhoud" type="VERA:EenheidwoonvertrekInhoud-e" minOccurs="0" nillable="true" />
+          <element name="vertrekkenAantal" type="VERA:EenheidvertrekkenAantal-e" minOccurs="0" nillable="true" />
+          <element name="woonvertrekkenTotaalOppervlakte" type="VERA:EenheidwoonvertrekkenTotaalOppervlakte-e" minOccurs="0" nillable="true" />
+          <element name="overigeVertrekkenTotaalOppervlakte" type="VERA:EenheidoverigeVertrekkenTotaalOppervlakte-e" minOccurs="0" nillable="true" />
+          <element name="bestemming" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="doelgroep" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="woonvorm" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="zelfstandig" type="VERA:Eenheidzelfstandig-e" minOccurs="0" nillable="true" />
+          <element name="zorgfaciliteitOmschrijving" type="VERA:EenheidzorgfaciliteitOmschrijving-e" minOccurs="0" nillable="true" />
+          <element name="kwaliteitsniveau" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="toegankelijkheidslabels" type="VERA:ALGREFALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="beschermdStadsgezicht" type="VERA:EenheidbeschermdStadsgezicht-e" minOccurs="0" nillable="true" />
+          <!--<element name="monumenten" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />-->
+          <element name="beginBouwdatum" type="VERA:EenheidbeginBouwdatum-e" minOccurs="0" nillable="true" />
+          <element name="opleverdatum" type="VERA:Eenheidopleverdatum-e" minOccurs="0" nillable="true" />
+          <element name="bouwnummer" type="VERA:Eenheidbouwnummer-e" minOccurs="0" nillable="true" />
+          <!--<element name="bouwdeel" type="VERA:VASBOU-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="renovatie" type="VERA:VASREN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="nettohuur" type="VERA:Eenheidnettohuur-e" nillable="true" minOccurs="0"/>-->
+          <element name="brutohuur" type="VERA:Eenheidbrutohuur-e" minOccurs="0" nillable="true" />
+          <element name="subsidiabeleHuur" type="VERA:EenheidsubsidiabeleHuur-e" minOccurs="0" nillable="true" />
+          <element name="streefhuur" type="VERA:Eenheidstreefhuur-e" minOccurs="0" nillable="true" />
+          <!--<element name="prijscomponenten" type="VERA:VASEENOVEPRI-basis" nillable="true" minOccurs="0" />
+           <element name="huurklasse" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>-->
+          <element name="vraagprijs" type="VERA:Eenheidvraagprijs-e" minOccurs="0" nillable="true" />
+          <!--<element name="woningwaarderingResultaat" type="VERA:VASRES-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="energielabel" type="VERA:VASENE-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+           <element name="huurovereenkomsten" type="VERA:VASEENOVEHUU-basis" nillable="true" minOccurs="0" />
+           <element name="koopovereenkomsten" type="VERA:VASEENOVEKOO-basis" nillable="true" minOccurs="0" />
+           <element name="serviceovereenkomsten" type="VERA:VASEENOVESER-basis" nillable="true" minOccurs="0" />
+           <element name="onderhoudsovereenkomsten" type="VERA:VASEENOVEOND-basis" nillable="true" minOccurs="0" />
+           <element name="taxaties" type="VERA:VASEENVASTAX-basis" nillable="true" minOccurs="0" />-->
+          <element name="verkoop" type="VERA:Eenheidverkoop-e" minOccurs="0" nillable="true" />
+          <element name="situering" type="VERA:Eenheidsituering-e" minOccurs="0" nillable="true" />
+          <!--<element name="kenmerken" type="VERA:VASEENVASKEN-basis" nillable="true" minOccurs="0" />
+           <element name="voorwaarden" type="VERA:VASVOO-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="publicatie" type="VERA:WOOPUB-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <!--<element name="energieprestatie" type="VERA:VASENP-kerngegevens" nillable="true" minOccurs="0"/>-->
+          <element name="maatschappelijkLabel" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <!--<element name="informatieobjecten" type="VERA:VASEENDOSINF-basis" nillable="true" minOccurs="0" />-->
+          <element name="prijsconditie" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="klimaatbeheersing" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="liggingTuin" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="buitenruimten" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="interieur" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="isolatie" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="sanitair" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="energievoorzieningen" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="ligging" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASEEN-kerngegevens-restricted">
+    <annotation>
+      <documentation>Eenheid</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASEEN-kerngegevens">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>          -->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASENP-restricted">
+    <annotation>
+      <documentation>engergieprestatie</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASENP-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Energieprestatiecode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="adviseur" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="begindatum" type="VERA:Energieprestatiebegindatum-e" minOccurs="0" nillable="true" />
+          <element name="einddatum" type="VERA:Energieprestatieeinddatum-e" minOccurs="0" nillable="true" />
+          <element name="index" type="VERA:Energieprestatieindex-e" minOccurs="0" nillable="true" />
+          <element name="label" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASVER-restricted">
+    <annotation>
+      <documentation>
+        Vertrek
+      </documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASVER-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:VertrekbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Vertrekcode-e" minOccurs="0" nillable="true" />
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="naam" type="VERA:Vertreknaam-e" minOccurs="0" nillable="true" />
+          <element name="oppervlakte" type="VERA:Vertrekoppervlakte-e" minOccurs="0" nillable="true" />
+          <element name="inhoud" type="VERA:Vertrekinhoud-e" minOccurs="0" nillable="true" />
+          <!--<element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASREN-restricted">
+    <annotation>
+      <documentation>
+        Renovatie
+      </documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASREN-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:RenovatiebusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Renovatiecode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="datum" type="VERA:Renovatiedatum-e" minOccurs="0" nillable="true" />
+          <element name="omschrijving" type="VERA:Renovatieomschrijving-e" minOccurs="0" nillable="true" />
+          <!--<element name="eenheden" type="VERA:VASRENVASEEN-basis" nillable="true" minOccurs="0" />
+          <element name="panden" type="VERA:VASRENVASPAN-basis" nillable="true" minOccurs="0" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASGEM-restricted">
+    <annotation>
+      <documentation>Gemeente</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASGEM-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+      <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+      <element name="businessKey" type="VERA:GemeentebusinessKey-e" nillable="true" minOccurs="0"/-->
+          <element name="code" type="VERA:Gemeentecode-e" nillable="true" minOccurs="0"/>
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="naam" type="VERA:Gemeentenaam-e" nillable="true" minOccurs="0"/>
+          <!--<element name="provincie" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+      <element name="stadsdelen" type="VERA:VASGEMVASSTA-basis" nillable="true" minOccurs="0" />
+      <element name="woonplaatsen" type="VERA:VASGEMVASWOO-basis" nillable="true" minOccurs="0" />
+      <element name="geometrie" type="VERA:VASGEO-restricted" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASWOO-restricted">
+    <annotation>
+      <documentation>Woonplaats</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASWOO-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+      <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+      <element name="businessKey" type="VERA:WoonplaatsbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Woonplaatscode-e" nillable="true" minOccurs="0"/>
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+      <element name="gemeente" type="VERA:VASGEM-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="naam" type="VERA:Woonplaatsnaam-e" nillable="true" minOccurs="0"/>
+          <!--<element name="wijken" type="VERA:VASWOOVASWIJ-basis" nillable="true" minOccurs="0" />
+      <element name="bag" type="VERA:VASBAW-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+      <element name="geometrie" type="VERA:VASGEO-restricted" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="VASWIJ-restricted">
+    <annotation>
+      <documentation>Woonplaats</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASWIJ-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:WijkbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Wijkcode-e" nillable="true" minOccurs="0"/>
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <!--<element name="soort" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>-->
+          <element name="naam" type="VERA:Wijknaam-e" nillable="true" minOccurs="0"/>
+          <!--<element name="omschrijving" type="VERA:Wijkomschrijving-e" nillable="true" minOccurs="0"/>
+          <element name="stadsdeel" type="VERA:VASSTA-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="woonplaats" type="VERA:VASWOO-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="buurten" type="VERA:VASWIJVASBUU-basis" nillable="true" minOccurs="0" />
+          <element name="geometrie" type="VERA:VASGEO-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="VASBUU-restricted">
+    <annotation>
+      <documentation>Buurt</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASBUU-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+      <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+      <element name="businessKey" type="VERA:BuurtbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Buurtcode-e" nillable="true" minOccurs="0"/>
+          <!--element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+      <element name="soort" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>-->
+          <element name="naam" type="VERA:Buurtnaam-e" nillable="true" minOccurs="0"/>
+          <!--<element name="omschrijving" type="VERA:Buurtomschrijving-e" nillable="true" minOccurs="0"/>
+      <element name="gebouwen" type="VERA:VASBUUVASGEB-basis" nillable="true" minOccurs="0" />
+      <element name="wijk" type="VERA:VASWIJ-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+      <element name="eenheden" type="VERA:VASBUUVASEEN-basis" nillable="true" minOccurs="0" />
+      <element name="geometrie" type="VERA:VASGEO-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASADR-restricted">
+    <annotation>
+      <documentation xml:lang="nl">Bevat adresgegevens voor het woonruimteverdeling systeem.</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASADR-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:AdresbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Adrescode-e" minOccurs="0" nillable="true" />
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="straatnaam" type="VERA:Adresstraatnaam-e" minOccurs="0" nillable="true" />
+          <element name="huisnummer" type="VERA:Adreshuisnummer-e" minOccurs="0" nillable="true" />
+          <element name="huisletter" type="VERA:Adreshuisletter-e" minOccurs="0" nillable="true" />
+          <element name="huisnummerToevoeging" type="VERA:AdreshuisnummerToevoeging-e" minOccurs="0" nillable="true" />
+          <!--<element name="adres" type="VERA:Adresadres-e" nillable="true" minOccurs="0"/>-->
+          <element name="postcode" type="VERA:Adrespostcode-e" minOccurs="0" nillable="true" />
+          <!--<element name="woonplaats" type="VERA:VASWOO-kerngegevens" minOccurs="0" maxOccurs="1" nillable="true" />
+          <element name="buurt" type="VERA:VASBUU-kerngegevens" minOccurs="0" maxOccurs="1" nillable="true" />
+          <element name="wijk" type="VERA:VASWIJ-kerngegevens" minOccurs="0" maxOccurs="1" nillable="true" />-->
+          <!--<element name="corporatieBuurt" type="VERA:VASBUU-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="corporatieWijk" type="VERA:VASWIJ-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <!--<element name="gemeente" type="VERA:VASGEM-kerngegevens" minOccurs="0" maxOccurs="1" nillable="true" />-->
+          <!--<element name="provincie" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="land" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="geometrie" type="VERA:VASGEO-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="eenheidNevenadressen" type="VERA:VASADRVASEEN-basis" nillable="true" minOccurs="0" />
+          <element name="eenheidAdres" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <!--<element name="bag" type="VERA:VASBAG-kerngegevens" minOccurs="0" maxOccurs="1" nillable="true" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="VASPOS-restricted">
+    <annotation>
+      <documentation>Postadres</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASPOS-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Postadrescode-e" nillable="true" minOccurs="0"/>
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="straatnaam" type="VERA:Postadresstraatnaam-e" nillable="true" minOccurs="0"/>
+          <element name="huisnummer" type="VERA:Postadreshuisnummer-e" nillable="true" minOccurs="0"/>
+          <element name="huisletter" type="VERA:Postadreshuisletter-e" nillable="true" minOccurs="0"/>
+          <element name="huisnummerToevoeging" type="VERA:PostadreshuisnummerToevoeging-e" nillable="true" minOccurs="0"/>
+          <element name="postbusnummer" type="VERA:Postadrespostbusnummer-e" nillable="true" minOccurs="0"/>
+          <element name="antwoordnummer" type="VERA:Postadresantwoordnummer-e" nillable="true" minOccurs="0"/>
+          <element name="postcode" type="VERA:Postadrespostcode-e" nillable="true" minOccurs="0"/>
+          <!--<element name="woonplaats" type="VERA:VASWOO-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASBUI-restricted">
+    <annotation>
+      <documentation>Buitenlands adres</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASBUI-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:BuitenlandsAdrescode-e" minOccurs="0" nillable="true" />
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="straatnaam" type="VERA:BuitenlandsAdresstraatnaam-e" minOccurs="0" nillable="true" />
+          <element name="huisnummer" type="VERA:BuitenlandsAdreshuisnummer-e" minOccurs="0" nillable="true" />
+          <element name="huisnummerToevoeging" type="VERA:BuitenlandsAdreshuisnummerToevoeging-e" minOccurs="0" nillable="true" />
+          <element name="adres" type="VERA:BuitenlandsAdresadres-e" minOccurs="0" nillable="true" />
+          <element name="postbusnummer" type="VERA:BuitenlandsAdrespostbusnummer-e" minOccurs="0" nillable="true" />
+          <element name="postcode" type="VERA:BuitenlandsAdrespostcode-e" minOccurs="0" nillable="true" />
+          <element name="woonplaats" type="VERA:BuitenlandsAdreswoonplaats-e" minOccurs="0" nillable="true" />
+          <element name="provincie" type="VERA:BuitenlandsAdresprovincie-e" minOccurs="0" nillable="true" />
+          <element name="land" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <!--<element name="geometrie" type="VERA:VASGEO-kerngegevens" minOccurs="0" maxOccurs="1" nillable="true" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASKEN-restricted">
+    <annotation>
+      <documentation>Eenheidkenmerk</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:VASKEN-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:EenheidkenmerkbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Eenheidkenmerkcode-e" nillable="true" minOccurs="0"/>
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="soort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="naam" type="VERA:Eenheidkenmerknaam-e" nillable="true" minOccurs="0"/>
+          <!--<element name="omschrijving" type="VERA:Eenheidkenmerkomschrijving-e" nillable="true" minOccurs="0"/>
+          <element name="waarde" type="VERA:Eenheidkenmerkwaarde-e" nillable="true" minOccurs="0"/>
+          <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VASEENVASKEN-restricted">
+    <annotation>
+      <documentation>Associatie naar Eenheidkenmerk</documentation>
+    </annotation>
+    <sequence>
+      <element name="eenheidkenmerk" type="VERA:VASKEN-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="VASEENVASKEN"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+
+  <!-- Woonruimteverdeling -->
+  <complexType name="WOOKAN-restricted">
+    <annotation>
+      <documentation>Kandidaat</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:WOOKAN-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:KandidaatbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Kandidaatcode-e" minOccurs="0" nillable="true" />
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="reactie" type="VERA:WOOREA-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="aanvrager" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="medeaanvrager" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="aanbiedingen" type="VERA:WOOKANWOOAAN-basis" nillable="true" minOccurs="0" />
+          <element name="contactmomenten" type="VERA:WOOKANRELCON-basis" nillable="true" minOccurs="0" />-->
+          <element name="positie" type="VERA:Kandidaatpositie-e" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <element name="status" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="detailStatus" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOPUB-restricted">
+    <annotation>
+      <documentation>Publicatie</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:WOOPUB-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:PublicatiebusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Publicatiecode-e" minOccurs="0" nillable="true" />
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="status" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="begindatum" type="VERA:Publicatiebegindatum-e" minOccurs="0" nillable="true" />
+          <element name="einddatum" type="VERA:Publicatieeinddatum-e" minOccurs="0" nillable="true" />
+          <element name="modules" type="VERA:ALGREFALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="looptijd" type="VERA:Publicatielooptijd-e" minOccurs="0" nillable="true" />
+          <!--<element name="eenheden" type="VERA:WOOPUBVASEEN-basis" nillable="true" minOccurs="0" />
+          <element name="cluster" type="VERA:VASCLU-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="aantalEenheden" type="VERA:PublicatieaantalEenheden-e" minOccurs="0" nillable="true" />
+          <element name="aantalEenhedenBeschikbaar" type="VERA:PublicatieaantalEenhedenBeschikbaar-e" minOccurs="0" nillable="true" />
+          <element name="advertentieUrl" type="VERA:PublicatieadvertentieUrl-e" minOccurs="0" nillable="true" />
+          <element name="reactieUrl" type="VERA:PublicatiereactieUrl-e" minOccurs="0" nillable="true" />
+          <element name="model" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="detailModel" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="intakevorm" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="contractvorm" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="taal" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="wachttijd" type="VERA:Publicatiewachttijd-e" minOccurs="0" nillable="true" />
+          <element name="wachttijdMetVoorrang" type="VERA:PublicatiewachttijdMetVoorrang-e" minOccurs="0" nillable="true" />
+          <element name="opleverdatum" type="VERA:Publicatieopleverdatum-e" minOccurs="0" nillable="true" />
+          <element name="oplevering" type="VERA:Publicatieoplevering-e" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="detailStatus" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOTOE-restricted">
+    <annotation>
+      <documentation>Toewijzing</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:WOOTOE-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:ToewijzingbusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Toewijzingcode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="aanbieding" type="VERA:WOOAAN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="relatie" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="contactmomenten" type="VERA:WOOTOERELCON-basis" nillable="true" minOccurs="0" />
+          <element name="overeenkomst" type="VERA:OVEOVE-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="afspraken" type="VERA:WOOTOERELAFS-basis" nillable="true" minOccurs="0" />-->
+          <element name="datum" type="VERA:Toewijzingdatum-e" minOccurs="0" nillable="true" />
+          <!--<element name="kandidaat" type="VERA:WOOKAN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="publicatie" type="VERA:WOOPUB-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="doelgroep" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="Rekeninkomen" type="VERA:ToewijzingRekeninkomen-e" nillable="true" minOccurs="0"/>
+          <element name="Rekenhuur" type="VERA:ToewijzingRekenhuur-e" nillable="true" minOccurs="0"/>
+          <element name="Reden" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="huishoudgrootte" type="VERA:Toewijzinghuishoudgrootte-e" nillable="true" minOccurs="0"/>
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOHUI-restricted">
+    <annotation>
+      <documentation>Huidige gebruiker</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:WOOHUI-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:HuidigeGebruikercode-e" minOccurs="0" nillable="true" />
+          <!--<element name="businessKey" type="VERA:HuidigeGebruikerbusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="contactpersoon" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="Vertrekdatum" type="VERA:HuidigeGebruikerVertrekdatum-e" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <!-- Overeenkomsten -->
+  <complexType name="OVEPRI-restricted">
+    <complexContent>
+      <restriction base="VERA:OVEPRI-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:PrijscomponentbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Prijscomponentcode-e" nillable="true" minOccurs="0"/>
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="begindatum" type="VERA:Prijscomponentbegindatum-e" nillable="true" minOccurs="0"/>
+          <element name="einddatum" type="VERA:Prijscomponenteinddatum-e" nillable="true" minOccurs="0"/>-->
+          <element name="bedrag" type="VERA:Prijscomponentbedrag-e" minOccurs="0" nillable="true" />
+          <element name="btw" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="detailSoort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEOVE-restricted">
+    <annotation>
+      <documentation>Overeenkomst</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:OVEOVE-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:OvereenkomstbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Overeenkomstcode-e" minOccurs="0" nillable="true" />
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="begindatum" type="VERA:Overeenkomstbegindatum-e" minOccurs="0" nillable="true" />
+          <element name="einddatum" type="VERA:Overeenkomsteinddatum-e" minOccurs="0" nillable="true" />
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="detailSoort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <!--<element name="volgnummer" type="VERA:Overeenkomstvolgnummer-e" nillable="true" minOccurs="0"/>
+          <element name="conceptVersturingsdatum" type="VERA:OvereenkomstconceptVersturingsdatum-e" nillable="true" minOccurs="0"/>
+          <element name="ontbonden" type="VERA:Overeenkomstontbonden-e" nillable="true" minOccurs="0"/>
+          <element name="redenOntbinding" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="contractanten" type="VERA:OVEOVEOVEOVR-basis" nillable="true" minOccurs="0" />
+          <element name="contactmomenten" type="VERA:OVEOVERELCON-basis" nillable="true" minOccurs="0" />
+          <element name="garantie" type="VERA:VASGAR-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="prijscomponenten" type="VERA:OVEOVEOVEPRI-basis" minOccurs="0" nillable="true" />
+          <element name="inspecties" type="VERA:OVEOVEOVEINS-basis" nillable="true" minOccurs="0" />
+          <element name="betaalgegeven" type="VERA:RELBET-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="versturen" type="VERA:Overeenkomstversturen-e" nillable="true" minOccurs="0"/>
+          <element name="versturenStatus" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="verstuurdatum" type="VERA:Overeenkomstverstuurdatum-e" nillable="true" minOccurs="0"/>-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <!-- Relaties -->
+  <complexType name="RELREL-kerngegeven-restricted">
+    <complexContent>
+      <restriction base="VERA:RELREL-kerngegevens">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" minOccurs="0" nillable="true" />-->
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELNAT-restricted">
+    <complexContent>
+      <restriction base="VERA:RELNAT-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:RelatiebusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Relatiecode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="adressen" type="VERA:RELRELRELADR-basis" nillable="true" minOccurs="0" />
+          <element name="contactgegevens" type="VERA:RELRELRELCOG-basis" nillable="true" minOccurs="0" />
+          <element name="rollen" type="VERA:RELRELRELROL-basis" nillable="true" minOccurs="0" />
+          <element name="betaalgegevens" type="VERA:RELRELRELBET-basis" nillable="true" minOccurs="0" />
+          <element name="contactmomenten" type="VERA:RELRELRELCON-basis" nillable="true" minOccurs="0" />
+          <element name="afspraken" type="VERA:RELRELRELAFS-basis" nillable="true" minOccurs="0" />
+          <element name="groepen" type="VERA:RELRELRELGRO-basis" nillable="true" minOccurs="0" />
+          <element name="kenmerken" type="VERA:RELRELRELKEN-basis" nillable="true" minOccurs="0" />
+          <element name="inspecties" type="VERA:RELRELOVEINS-basis" nillable="true" minOccurs="0" />
+          <element name="overeenkomsten" type="VERA:RELRELOVEOVR-basis" nillable="true" minOccurs="0" />
+          <element name="onderhoudsverzoeken" type="VERA:RELRELONDOND-basis" nillable="true" minOccurs="0" />-->
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="voornaam" type="VERA:NatuurlijkPersoonvoornaam-e" minOccurs="0" nillable="true" />
+          <element name="initialen" type="VERA:NatuurlijkPersooninitialen-e" minOccurs="0" nillable="true" />
+          <element name="tussenvoegsels" type="VERA:NatuurlijkPersoontussenvoegsels-e" minOccurs="0" nillable="true" />
+          <element name="achternaam" type="VERA:NatuurlijkPersoonachternaam-e" minOccurs="0" nillable="true" />
+          <element name="roepnaam" type="VERA:NatuurlijkPersoonroepnaam-e" minOccurs="0" nillable="true" />
+          <element name="geslacht" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="geboortedatum" type="VERA:NatuurlijkPersoongeboortedatum-e" minOccurs="0" nillable="true" />
+          <!--<element name="overlijdensdatum" type="VERA:NatuurlijkPersoonoverlijdensdatum-e" nillable="true" minOccurs="0"/>
+          <element name="burgerlijkeStaat" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="nationaliteit" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>-->
+          <element name="bsn" type="VERA:NatuurlijkPersoonbsn-e" minOccurs="0" nillable="true" />
+          <!--<element name="registratie" type="VERA:RELREG-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="reacties" type="VERA:RELNATWOOREA-basis" nillable="true" minOccurs="0" />
+          <element name="aanbiedingen" type="VERA:RELNATWOOAAN-basis" nillable="true" minOccurs="0" />
+          <element name="toewijzingen" type="VERA:RELNATWOOTOE-basis" nillable="true" minOccurs="0" />
+          <element name="signaleringen" type="VERA:RELNATRELSIG-basis" nillable="true" minOccurs="0" />
+          <element name="inkomens" type="VERA:RELNATRELINK-basis" nillable="true" minOccurs="0" />
+          <element name="opleiding" type="VERA:RELOPL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="regelingen" type="VERA:RELNATWOOREG-basis" nillable="true" minOccurs="0" />
+          <element name="voorrangsregelingen" type="VERA:RELNATWOOVOO-basis" nillable="true" minOccurs="0" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="informatieobjecten" type="VERA:RELNATDOSINF-basis" minOccurs="0" nillable="true" />-->
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELSIG-restricted">
+    <annotation>
+      <documentation>Signalering</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:RELSIG-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" minOccurs="0" nillable="true" />-->
+          <!--<element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:SignaleringbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Signaleringcode-e" minOccurs="0" nillable="true" />
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="relatie" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="adres" type="VERA:VASADR-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="status" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="detailStatus" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="begindatum" type="VERA:Signaleringbegindatum-e" minOccurs="0" nillable="true" />
+          <element name="einddatum" type="VERA:Signaleringeinddatum-e" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELADR-restricted">
+    <annotation>
+      <documentation>RelatieAdres</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:RELADR-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:RelatieAdresbusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:RelatieAdrescode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <!--<element name="relatie" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="adres" type="VERA:VASADR-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="begindatum" type="VERA:RelatieAdresbegindatum-e" nillable="true" minOccurs="0"/>
+          <element name="einddatum" type="VERA:RelatieAdreseinddatum-e" nillable="true" minOccurs="0"/>-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELOPL-restricted">
+    <annotation>
+      <documentation>Opleiding</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:RELOPL-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:OpleidingbusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Opleidingcode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="relatie" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="niveau" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="instelling" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="plaats" type="VERA:Opleidingplaats-e" minOccurs="0" nillable="true" />
+          <element name="studentnummer" type="VERA:Opleidingstudentnummer-e" minOccurs="0" nillable="true" />
+          <element name="begindatum" type="VERA:Opleidingbegindatum-e" minOccurs="0" nillable="true" />
+          <element name="einddatum" type="VERA:Opleidingeinddatum-e" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELINK-restricted">
+    <annotation>
+      <documentation>Inkomen</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:RELINK-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:InkomenbusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Inkomencode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="relatie" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="nettoMaandinkomen" type="VERA:InkomennettoMaandinkomen-e" minOccurs="0" nillable="true" />
+          <element name="brutoMaandinkomen" type="VERA:InkomenbrutoMaandinkomen-e" minOccurs="0" nillable="true" />
+          <element name="nettoJaarinkomen" type="VERA:InkomennettoJaarinkomen-e" minOccurs="0" nillable="true" />
+          <element name="brutoJaarinkomen" type="VERA:InkomenbrutoJaarinkomen-e" minOccurs="0" nillable="true" />
+          <element name="bron" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="controledatum" type="VERA:Inkomencontroledatum-e" minOccurs="0" nillable="true" />
+          <!--<element name="controleur" type="VERA:RELNAT-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="RELTEL-restricted">
+    <annotation>
+      <documentation>Contactgegeven in de vorm van telefoonnummer</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:RELTEL-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:ContactgegevenbusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Contactgegevencode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="detailSoort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <!--<element name="relatie" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="relatieRol" type="VERA:RELROL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />-->
+          <element name="waarde" type="VERA:Contactgegevenwaarde-e" minOccurs="0" nillable="true" />
+          <element name="voorkeur" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="landnummer" type="VERA:Telefoonnummerlandnummer-e" minOccurs="0" nillable="true" />
+          <element name="netnummer" type="VERA:Telefoonnummernetnummer-e" minOccurs="0" nillable="true" />
+          <element name="abonneenummer" type="VERA:Telefoonnummerabonneenummer-e" minOccurs="0" nillable="true" />
+          <element name="extensie" type="VERA:Telefoonnummerextensie-e" minOccurs="0" nillable="true" />
+          <element name="dagdelen" type="VERA:ALGREFALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="WRVGBRRELNAT-restricted">
+    <annotation>
+      <documentation>Huidige gebruiker contactpersoon </documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:RELNAT-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+          <element name="businessKey" type="VERA:RelatiebusinessKey-e" nillable="true" minOccurs="0"/>
+          <element name="code" type="VERA:Relatiecode-e" nillable="true" minOccurs="0"/>
+          <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+          <element name="adressen" type="VERA:RELRELRELADR-basis" nillable="true" minOccurs="0" />
+          <element name="contactgegevens" type="VERA:RELRELRELCOG-basis" nillable="true" minOccurs="0" />
+          <element name="rollen" type="VERA:RELRELRELROL-basis" nillable="true" minOccurs="0" />
+          <element name="betaalgegevens" type="VERA:RELRELRELBET-basis" nillable="true" minOccurs="0" />
+          <element name="contactmomenten" type="VERA:RELRELRELCON-basis" nillable="true" minOccurs="0" />
+          <element name="afspraken" type="VERA:RELRELRELAFS-basis" nillable="true" minOccurs="0" />
+          <element name="groepen" type="VERA:RELRELRELGRO-basis" nillable="true" minOccurs="0" />
+          <element name="kenmerken" type="VERA:RELRELRELKEN-basis" nillable="true" minOccurs="0" />
+          <element name="inspecties" type="VERA:RELRELOVEINS-basis" nillable="true" minOccurs="0" />
+          <element name="overeenkomsten" type="VERA:RELRELOVEOVR-basis" nillable="true" minOccurs="0" />
+          <element name="onderhoudsverzoeken" type="VERA:RELRELONDOND-basis" nillable="true" minOccurs="0" />-->
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="voornaam" type="VERA:NatuurlijkPersoonvoornaam-e" minOccurs="0" nillable="true" />
+          <element name="initialen" type="VERA:NatuurlijkPersooninitialen-e" minOccurs="0" nillable="true" />
+          <element name="tussenvoegsels" type="VERA:NatuurlijkPersoontussenvoegsels-e" minOccurs="0" nillable="true" />
+          <element name="achternaam" type="VERA:NatuurlijkPersoonachternaam-e" minOccurs="0" nillable="true" />
+          <!--<element name="roepnaam" type="VERA:NatuurlijkPersoonroepnaam-e" nillable="true" minOccurs="0"/>
+          <element name="geslacht" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="geboortedatum" type="VERA:NatuurlijkPersoongeboortedatum-e" nillable="true" minOccurs="0"/>
+          <element name="overlijdensdatum" type="VERA:NatuurlijkPersoonoverlijdensdatum-e" nillable="true" minOccurs="0"/>
+          <element name="burgerlijkeStaat" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="nationaliteit" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>-->
+          <element name="bsn" type="VERA:NatuurlijkPersoonbsn-e" minOccurs="0" nillable="true" />
+          <!--<element name="registratie" type="VERA:RELREG-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="reacties" type="VERA:RELNATWOOREA-basis" nillable="true" minOccurs="0" />
+          <element name="aanbiedingen" type="VERA:RELNATWOOAAN-basis" nillable="true" minOccurs="0" />
+          <element name="toewijzingen" type="VERA:RELNATWOOTOE-basis" nillable="true" minOccurs="0" />
+          <element name="signaleringen" type="VERA:RELNATRELSIG-basis" nillable="true" minOccurs="0" />
+          <element name="inkomens" type="VERA:RELNATRELINK-basis" nillable="true" minOccurs="0" />
+          <element name="opleiding" type="VERA:RELOPL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="regelingen" type="VERA:RELNATWOOREG-basis" nillable="true" minOccurs="0" />
+          <element name="voorrangsregelingen" type="VERA:RELNATWOOVOO-basis" nillable="true" minOccurs="0" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />
+          <!--<element name="informatieobjecten" type="VERA:RELNATDOSINF-basis" minOccurs="0" nillable="true" />-->
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="DOSINF-restricted">
+    <annotation>
+      <documentation>Informatieobject zonde binair bestand, deze moet via DOSINF-Basis opgehaald.</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:DOSINF-basis">
+        <sequence>
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+                   <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+                    <element name="businessKey" type="VERA:InformatieobjectbusinessKey-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Informatieobjectcode-e" nillable="true" minOccurs="0"/>
+          <!--<element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>-->
+          <element name="titel" type="VERA:Informatieobjecttitel-e" nillable="true" minOccurs="0"/>
+          <element name="beschrijving" type="VERA:Informatieobjectbeschrijving-e" nillable="true" minOccurs="0"/>
+          <!--<element name="registratiedatum" type="VERA:Informatieobjectregistratiedatum-e" nillable="true" minOccurs="0"/>
+                    <element name="ontvangstdatum" type="VERA:Informatieobjectontvangstdatum-e" nillable="true" minOccurs="0"/>
+                    <element name="publicatiedatum" type="VERA:Informatieobjectpublicatiedatum-e" nillable="true" minOccurs="0"/>
+                    <element name="auteur" type="VERA:Informatieobjectauteur-e" nillable="true" minOccurs="0"/>-->
+          <!--<element name="onderwerp" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="subonderwerp" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>-->
+          <element name="soort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="detailSoort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="formaat" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="bestandsnaam" type="VERA:Informatieobjectbestandsnaam-e" nillable="true" minOccurs="0"/>
+          <element name="bestandsgrootte" type="VERA:Informatieobjectbestandsgrootte-e" nillable="true" minOccurs="0"/>
+          <element name="versie" type="VERA:Informatieobjectversie-e" nillable="true" minOccurs="0"/>
+          <!--<element name="bestand" type="VERA:Informatieobjectbestand-e" nillable="true" minOccurs="0"/>-->
+          <element name="bestandslocatie" type="VERA:Informatieobjectbestandslocatie-e" nillable="true" minOccurs="0"/>
+          <element name="taal" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="vertrouwelijkheid" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="gebruiksrechten" type="VERA:Informatieobjectgebruiksrechten-e" nillable="true" minOccurs="0"/>
+          <element name="externePublicatie" type="VERA:InformatieobjectexternePublicatie-e" nillable="true" minOccurs="0"/>
+          <element name="externePublicatietekst" type="VERA:InformatieobjectexternePublicatietekst-e" nillable="true" minOccurs="0"/>
+          <!--<element name="verantwoordelijkeOrganisatie" type="VERA:InformatieobjectverantwoordelijkeOrganisatie-e" nillable="true" minOccurs="0"/>
+          <element name="archiefnominatie" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+          <element name="archiefActiedatum" type="VERA:InformatieobjectarchiefActiedatum-e" nillable="true" minOccurs="0"/>
+          <element name="status" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+          <element name="detailStatus" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+          <element name="isBijlageVan" type="VERA:DOSINF-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="bijlagen" type="VERA:DOSINFDOSINF-basis" nillable="true" minOccurs="0" />
+          <element name="kenmerken" type="VERA:DOSINFDOSINK-basis" nillable="true" minOccurs="0" />
+          <element name="informatieobjecten" type="VERA:DOSINFDOSINF-basis" nillable="true" minOccurs="0" />
+          <element name="relaties" type="VERA:DOSINFRELREL-basis" nillable="true" minOccurs="0" />
+          <element name="clusters" type="VERA:DOSINFVASCLU-basis" nillable="true" minOccurs="0" />
+          <element name="collectiefObjecten" type="VERA:DOSINFVASCOL-basis" nillable="true" minOccurs="0" />
+          <element name="eenheden" type="VERA:DOSINFVASEEN-basis" nillable="true" minOccurs="0" />
+          <element name="overeenkomsten" type="VERA:DOSINFOVEOVE-basis" nillable="true" minOccurs="0" />
+          <element name="inkoopfacturen" type="VERA:DOSINFFINIFA-basis" nillable="true" minOccurs="0" />
+          <element name="inkoopopdrachten" type="VERA:DOSINFFINIOP-basis" nillable="true" minOccurs="0" />
+          <element name="dossiers" type="VERA:DOSINFDOSDOS-basis" nillable="true" minOccurs="0" />
+          <element name="processen" type="VERA:DOSINFDOSPRC-basis" nillable="true" minOccurs="0" />
+          <element name="zaken" type="VERA:DOSINFDOSZAA-basis" nillable="true" minOccurs="0" />-->
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <!--<element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ALGSTU-restricted">
+    <annotation>
+      <documentation>Sturingslabel</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="VERA:ALGSTU-basis">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Sturingslabelcode-e" nillable="true" minOccurs="0"/>
+          <element name="datum" type="VERA:Sturingslabeldatum-e" nillable="true" minOccurs="0"/>
+          <element name="label" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="soort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="bron" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ALGSTUALGSTU-restricted">
+    <annotation>
+      <documentation>
+        Generieke associatie klasse naar Sturingslabel
+      </documentation>
+    </annotation>
+    <sequence>
+      <element name="sturingslabel" type="VERA:ALGSTU-restricted" minOccurs="0" maxOccurs="unbounded" />
+    </sequence>
+    <attribute fixed="ALGSTUALGSTU" ref="StUF:entiteittype" />
+    <attributeGroup ref="StUF:relatie" />
+  </complexType>
+
+
+</schema>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A792CFC-0C5F-4ACB-9E03-5F6F2E3FAA2A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VeraClient</RootNamespace>
+    <AssemblyName>VeraClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Generated\dgo01_msg_vraagAntwoord.cs" />
+    <Compile Include="Helpers\ApiInvoker.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Logger\LoggerSingleton.cs" />
+    <Compile Include="Logger\LogType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Agents\KeuzeboomAgent.cs" />
+    <Compile Include="Agents\OnderhoudsverzoekAgent.cs" />
+    <Compile Include="Helpers\Serialization.cs" />
+    <Compile Include="Soap\NamespaceConstants.cs" />
+    <Compile Include="Soap\SoapClient.cs" />
+    <Compile Include="Soap\SoapMessageBuilder.cs" />
+    <Compile Include="Soap\SoapMessageParser.cs" />
+    <Compile Include="Soap\SoapParseException.cs" />
+    <Compile Include="Soap\SoapRequest.cs" />
+    <Compile Include="Soap\SoapResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Generated\CreateClasses.cmd" />
+    <None Include="SectorModel\0301\stuf0301.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\0301\stuf0301mtom.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\0301\stuf0301_services.wsdl" />
+    <None Include="SectorModel\0301\stuf0301_types.wsdl" />
+    <None Include="SectorModel\DGO01\entiteiten\dgo01_ent_basis.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\DGO01\entiteiten\dgo01_simpleTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\DGO01\entiteiten\dgo01_vera_ent_basis-restricted.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\DGO01\mutatie\dgo01_ent_mutatie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\DGO01\mutatie\dgo01_msg_mutatie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\DGO01\mutatie\dgo01_msg_stuf_mutatie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\DGO01\mutatie\dgo01_verwerkSynchroneKennisgeving_mutatie.wsdl" />
+    <None Include="SectorModel\DGO01\vraagAntwoord\dgo01_beantwoord_vraagAntwoord.wsdl" />
+    <None Include="SectorModel\DGO01\vraagAntwoord\dgo01_ent_vraagAntwoord.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\DGO01\vraagAntwoord\dgo01_msg_stuf_vraagAntwoord.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\DGO01\vraagAntwoord\dgo01_msg_vraagAntwoord.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\entiteiten\vera0301_ent_basis-restricted.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\entiteiten\vera0301_ent_basis.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\entiteiten\vera0301_simpleTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\entiteiten\vera0301_stuf_simpleTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\mutatie\vera0301_ent_mutatie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\mutatie\vera0301_msg_mutatie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\mutatie\vera0301_msg_stuf_mutatie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\mutatie\vera0301_ontvangAsynchroon_mutatie.wsdl" />
+    <None Include="SectorModel\VERA0301\mutatie\vera0301_verwerkSynchroneKennisgeving_mutatie.wsdl" />
+    <None Include="SectorModel\VERA0301\vraagAntwoord\vera0301_beantwoordVraag_vraagAntwoord.wsdl" />
+    <None Include="SectorModel\VERA0301\vraagAntwoord\vera0301_beantwoordVraag_vraagAntwoord_DE.wsdl" />
+    <None Include="SectorModel\VERA0301\vraagAntwoord\vera0301_ent_vraagAntwoord.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\vraagAntwoord\vera0301_msg_stuf_vraagAntwoord.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\vraagAntwoord\vera0301_msg_vraagAntwoord.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\VERA0301\vraagAntwoord\vera0301_ontvangAsynchroon_vraagAntwoord.wsdl" />
+    <None Include="SectorModel\WRV01\entiteiten\wrv01_ent_basis.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\WRV01\entiteiten\wrv01_simpleTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\WRV01\entiteiten\wrv01_vera_ent_basis-restricted.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\WRV01\mutatie\wrv01_ent_mutatie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\WRV01\mutatie\wrv01_msg_mutatie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\WRV01\mutatie\wrv01_msg_stuf_mutatie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectorModel\WRV01\mutatie\wrv01_ontvangAsynchroon_mutatie.wsdl" />
+    <None Include="SectorModel\WRV01\mutatie\wrv01_verwerkSynchroneKennisgeving_mutatie.wsdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

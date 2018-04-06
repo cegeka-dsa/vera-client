@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+  xmlns="http://www.w3.org/2001/XMLSchema" 
+  xmlns:StUF="http://www.egem.nl/StUF/StUF0301" 
+  xmlns:DGO="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301" targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.1">
+  <include schemaLocation="dgo01_ent_vraagAntwoord.xsd"/>
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../0301/stuf0301.xsd"/>
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="dgo01_msg_stuf_vraagAntwoord.xsd"/>
+  <annotation>
+    <documentation>Nieuw bestand in verband met nieuwe werkwijze maken sectormodellen</documentation>
+  </annotation>
+  
+  <element name="dgoondLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:StuurgegevensLa01"/>
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="melding" type="StUF:Melding" minOccurs="0" maxOccurs="unbounded"/>
+        <element name="antwoord" minOccurs="0">
+          <complexType>
+            <sequence>
+              <element name="object" type="DGO:DGOOND-antwoord" maxOccurs="unbounded"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoondLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOOND-StuurgegevensLv01"/>
+        <element name="parameters" type="StUF:DGOOND-parametersVraagSynchroon"/>
+        <element name="gelijk" type="DGO:DGOOND-vraag" minOccurs="0"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <element name="dgoplnDi02">
+    <complexType>
+      <annotation>
+        <documentation>Het bericht om planningsmogelijkheden op te vragen.</documentation>
+      </annotation>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOPLN-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGOPLN-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoplnDu02">
+    <complexType>
+      <annotation>
+        <documentation>Het bericht om planningsmogelijkheden op te vragen.</documentation>
+      </annotation>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOPLN-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGOPLN-antwoord" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <element name="dgokocDi02">
+    <complexType>
+      <annotation>
+        <documentation>Het bericht om antwoord te krijgen of het onderhoudsverzoek aangemaakt kan worden.</documentation>
+      </annotation>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOKOC-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGOKOC-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgokocDu02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOKOC-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGOKOC-antwoord" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <element name="dgokhuDi02">
+    <complexType>
+      <annotation>
+        <documentation>Het bericht om te bepalen of de kosten voor de huurder zijn.</documentation>
+      </annotation>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOKHU-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGOKHU-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgokhuDu02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOKHU-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGOKHU-antwoord" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgormsDi02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGORMS-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGORMS-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgormsDu02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGORMS-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGORMS-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <element name="dgobweDi02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOBWE-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGOBWE-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgobweDu02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOBWE-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGOBWE-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <element name="dgoodlDi02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOODL-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGOODL-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoodlDu02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOODL-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGOODL-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <element name="dgogbrDi02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOGBR-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGOGBR-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgogbrDu02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOGBR-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGOGBR-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <element name="dgospcDi02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOSPC-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGOSPC-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgospcDu02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOSPC-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGOSPC-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <element name="dgoorzDi02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOORZ-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGOORZ-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoorzDu02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOORZ-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGOORZ-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgorsjLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGORSJ-StuurgegevensLv01"/>
+        <element name="gelijk" type="DGO:DGORSJ-vraag" minOccurs="0"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgorsjLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGORSJ-StuurgegevensLa01"/>
+        <element name="melding" type="StUF:Melding" minOccurs="0" maxOccurs="unbounded"/>
+        <element name="object" type="DGO:DGORSJ-antwoord" maxOccurs="1" />
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoblgLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOBLG-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="object" type="DGO:DGOBLG-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoblgLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOBLG-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOBLG-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoiotDi02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOIOT-StuurgegevensDi02" />
+        <element name="object" type="DGO:DGOIOT-vraag" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoiotDu02">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOIOT-StuurgegevensDu02" />
+        <element name="object" type="DGO:DGOIOT-antwoord" nillable="true" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoinsLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOINS-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="gelijk" type="DGO:DGOINS-vraag" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoinsLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOINS-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOINS-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgosttLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOSTT-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="gelijk" type="DGO:DGOSTT-vraag" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgosttLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOSTT-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOSTT-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoosjLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOOSJ-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="gelijk" type="DGO:DGOOSJ-vraag" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoosjLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOOSJ-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOOSJ-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoohtLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOOHT-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="gelijk" type="DGO:DGOOHT-vraag" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoohtLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOOHT-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOOHT-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoovhLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOOVH-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="gelijk" type="DGO:DGOOVH-vraag" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoovhLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOOVH-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOOVH-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgokcoLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOKCO-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgokcoLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOKCO-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOKCO-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoeehLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOEEH-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoeehLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOEEH-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOEEH-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgomstLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOMST-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="gelijk" type="DGO:DGOMST-vraag" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgomstLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOMST-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOMST-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgomsoLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOMSO-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgomsoLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOMSO-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOMSO-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgosleLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOSLE-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="gelijk" type="DGO:DGOSLE-vraag" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgosleLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOSLE-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOSLE-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgomusLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOMUS-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="gelijk" type="DGO:DGOMUS-vraag" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgomusLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOMUS-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOMUS-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgomutLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOMUT-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgomutLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOMUT-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOMUT-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgoprjLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOPRJ-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+        <element name="gelijk" type="DGO:DGOPRJ-vraag" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgoprjLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOPRJ-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOPRJ-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="dgolndLv01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOLND-StuurgegevensLv01" />
+        <element name="parameters" type="StUF:ParametersVraag"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="dgolndLa01">
+    <complexType>
+      <sequence>
+        <element name="stuurgegevens" type="StUF:DGOLND-StuurgegevensLa01" />
+        <element name="parameters" type="StUF:ParametersAntwoordSynchroon"/>
+        <element name="object" type="DGO:DGOLND-antwoord" nillable="true" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+</schema>

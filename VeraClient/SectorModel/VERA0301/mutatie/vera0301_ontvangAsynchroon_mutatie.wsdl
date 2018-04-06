@@ -1,0 +1,2550 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310" xmlns:StUF="http://www.egem.nl/StUF/StUF0301" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="StUF-VERA0310" targetNamespace="http://www.stichting-vera.nl/StUF/sector/vera/0310">
+   <import namespace="http://www.egem.nl/StUF/StUF0301" location="../../0301/stuf0301_types.wsdl" />
+   <!--
+       <documentation>
+           Dit document definieert de webservices voor het portType OntvangAsynchroon voor de kennisgevingen in het sectormodel Basisgegevens.
+       </documentation>
+   -->
+   <types>
+       <xs:schema>
+           <xs:import namespace="http://www.stichting-vera.nl/StUF/sector/vera/0310" schemaLocation="vera0301_msg_mutatie.xsd" />
+       </xs:schema>
+   </types>
+   <message name="algrefLk01">
+       <part name="body" element="VERA:algrefLk01" />
+   </message>
+   <message name="algbroLk01">
+       <part name="body" element="VERA:algbroLk01" />
+   </message>
+   <message name="algaudLk01">
+       <part name="body" element="VERA:algaudLk01" />
+   </message>
+   <message name="relrelLk01">
+       <part name="body" element="VERA:relrelLk01" />
+   </message>
+   <message name="relnatLk01">
+       <part name="body" element="VERA:relnatLk01" />
+   </message>
+   <message name="relrecLk01">
+       <part name="body" element="VERA:relrecLk01" />
+   </message>
+   <message name="relgroLk01">
+       <part name="body" element="VERA:relgroLk01" />
+   </message>
+   <message name="relrolLk01">
+       <part name="body" element="VERA:relrolLk01" />
+   </message>
+   <message name="relconLk01">
+       <part name="body" element="VERA:relconLk01" />
+   </message>
+   <message name="reladrLk01">
+       <part name="body" element="VERA:reladrLk01" />
+   </message>
+   <message name="relcogLk01">
+       <part name="body" element="VERA:relcogLk01" />
+   </message>
+   <message name="reltelLk01">
+       <part name="body" element="VERA:reltelLk01" />
+   </message>
+   <message name="relafsLk01">
+       <part name="body" element="VERA:relafsLk01" />
+   </message>
+   <message name="relbetLk01">
+       <part name="body" element="VERA:relbetLk01" />
+   </message>
+   <message name="relinkLk01">
+       <part name="body" element="VERA:relinkLk01" />
+   </message>
+   <message name="relregLk01">
+       <part name="body" element="VERA:relregLk01" />
+   </message>
+   <message name="reloplLk01">
+       <part name="body" element="VERA:reloplLk01" />
+   </message>
+   <message name="relsigLk01">
+       <part name="body" element="VERA:relsigLk01" />
+   </message>
+   <message name="relkenLk01">
+       <part name="body" element="VERA:relkenLk01" />
+   </message>
+   <message name="woopubLk01">
+       <part name="body" element="VERA:woopubLk01" />
+   </message>
+   <message name="wooreaLk01">
+       <part name="body" element="VERA:wooreaLk01" />
+   </message>
+   <message name="wookanLk01">
+       <part name="body" element="VERA:wookanLk01" />
+   </message>
+   <message name="wooaanLk01">
+       <part name="body" element="VERA:wooaanLk01" />
+   </message>
+   <message name="wootoeLk01">
+       <part name="body" element="VERA:wootoeLk01" />
+   </message>
+   <message name="wooregLk01">
+       <part name="body" element="VERA:wooregLk01" />
+   </message>
+   <message name="woovooLk01">
+       <part name="body" element="VERA:woovooLk01" />
+   </message>
+   <message name="wooproLk01">
+       <part name="body" element="VERA:wooproLk01" />
+   </message>
+   <message name="oveoveLk01">
+       <part name="body" element="VERA:oveoveLk01" />
+   </message>
+   <message name="ovehuuLk01">
+       <part name="body" element="VERA:ovehuuLk01" />
+   </message>
+   <message name="oveserLk01">
+       <part name="body" element="VERA:oveserLk01" />
+   </message>
+   <message name="ovekooLk01">
+       <part name="body" element="VERA:ovekooLk01" />
+   </message>
+   <message name="oveondLk01">
+       <part name="body" element="VERA:oveondLk01" />
+   </message>
+   <message name="oveinsLk01">
+       <part name="body" element="VERA:oveinsLk01" />
+   </message>
+   <message name="ovetoeLk01">
+       <part name="body" element="VERA:ovetoeLk01" />
+   </message>
+   <message name="ovegesLk01">
+       <part name="body" element="VERA:ovegesLk01" />
+   </message>
+   <message name="oveuitLk01">
+       <part name="body" element="VERA:oveuitLk01" />
+   </message>
+   <message name="oveactLk01">
+       <part name="body" element="VERA:oveactLk01" />
+   </message>
+   <message name="ovepriLk01">
+       <part name="body" element="VERA:ovepriLk01" />
+   </message>
+   <message name="oveovrLk01">
+       <part name="body" element="VERA:oveovrLk01" />
+   </message>
+   <message name="ondondLk01">
+       <part name="body" element="VERA:ondondLk01" />
+   </message>
+   <message name="ondordLk01">
+       <part name="body" element="VERA:ondordLk01" />
+   </message>
+   <message name="ondtaaLk01">
+       <part name="body" element="VERA:ondtaaLk01" />
+   </message>
+   <message name="ondbesLk01">
+       <part name="body" element="VERA:ondbesLk01" />
+   </message>
+   <message name="ondstaLk01">
+       <part name="body" element="VERA:ondstaLk01" />
+   </message>
+   <message name="ondvooLk01">
+       <part name="body" element="VERA:ondvooLk01" />
+   </message>
+   <message name="vasadrLk01">
+       <part name="body" element="VERA:vasadrLk01" />
+   </message>
+   <message name="vasbagLk01">
+       <part name="body" element="VERA:vasbagLk01" />
+   </message>
+   <message name="vasobjLk01">
+       <part name="body" element="VERA:vasobjLk01" />
+   </message>
+   <message name="vasbouLk01">
+       <part name="body" element="VERA:vasbouLk01" />
+   </message>
+   <message name="vaseleLk01">
+       <part name="body" element="VERA:vaseleLk01" />
+   </message>
+   <message name="vascolLk01">
+       <part name="body" element="VERA:vascolLk01" />
+   </message>
+   <message name="vascluLk01">
+       <part name="body" element="VERA:vascluLk01" />
+   </message>
+   <message name="vaseenLk01">
+       <part name="body" element="VERA:vaseenLk01" />
+   </message>
+   <message name="vasrenLk01">
+       <part name="body" element="VERA:vasrenLk01" />
+   </message>
+   <message name="vasvooLk01">
+       <part name="body" element="VERA:vasvooLk01" />
+   </message>
+   <message name="vaseneLk01">
+       <part name="body" element="VERA:vaseneLk01" />
+   </message>
+   <message name="vasgarLk01">
+       <part name="body" element="VERA:vasgarLk01" />
+   </message>
+   <message name="vasgebLk01">
+       <part name="body" element="VERA:vasgebLk01" />
+   </message>
+   <message name="vaspanLk01">
+       <part name="body" element="VERA:vaspanLk01" />
+   </message>
+   <message name="vasbapLk01">
+       <part name="body" element="VERA:vasbapLk01" />
+   </message>
+   <message name="vasverLk01">
+       <part name="body" element="VERA:vasverLk01" />
+   </message>
+   <message name="vastaxLk01">
+       <part name="body" element="VERA:vastaxLk01" />
+   </message>
+   <message name="vaskenLk01">
+       <part name="body" element="VERA:vaskenLk01" />
+   </message>
+   <message name="vasbuuLk01">
+       <part name="body" element="VERA:vasbuuLk01" />
+   </message>
+   <message name="vaswijLk01">
+       <part name="body" element="VERA:vaswijLk01" />
+   </message>
+   <message name="vaswooLk01">
+       <part name="body" element="VERA:vaswooLk01" />
+   </message>
+   <message name="vasbawLk01">
+       <part name="body" element="VERA:vasbawLk01" />
+   </message>
+   <message name="vasstaLk01">
+       <part name="body" element="VERA:vasstaLk01" />
+   </message>
+   <message name="vasgemLk01">
+       <part name="body" element="VERA:vasgemLk01" />
+   </message>
+   <message name="vaswozLk01">
+       <part name="body" element="VERA:vaswozLk01" />
+   </message>
+   <message name="vasgeoLk01">
+       <part name="body" element="VERA:vasgeoLk01" />
+   </message>
+   <message name="vaspunLk01">
+       <part name="body" element="VERA:vaspunLk01" />
+   </message>
+   <message name="vaswonLk01">
+       <part name="body" element="VERA:vaswonLk01" />
+   </message>
+   <message name="vascriLk01">
+       <part name="body" element="VERA:vascriLk01" />
+   </message>
+   <message name="vasresLk01">
+       <part name="body" element="VERA:vasresLk01" />
+   </message>
+   <message name="vasgroLk01">
+       <part name="body" element="VERA:vasgroLk01" />
+   </message>
+   <message name="vaswaaLk01">
+       <part name="body" element="VERA:vaswaaLk01" />
+   </message>
+   <message name="vastoeLk01">
+       <part name="body" element="VERA:vastoeLk01" />
+   </message>
+   <message name="finfinLk01">
+       <part name="body" element="VERA:finfinLk01" />
+   </message>
+   <message name="fingreLk01">
+       <part name="body" element="VERA:fingreLk01" />
+   </message>
+   <message name="finverLk01">
+       <part name="body" element="VERA:finverLk01" />
+   </message>
+   <message name="finbojLk01">
+       <part name="body" element="VERA:finbojLk01" />
+   </message>
+   <message name="finbopLk01">
+       <part name="body" element="VERA:finbopLk01" />
+   </message>
+   <message name="finbosLk01">
+       <part name="body" element="VERA:finbosLk01" />
+   </message>
+   <message name="finbegLk01">
+       <part name="body" element="VERA:finbegLk01" />
+   </message>
+   <message name="fingroLk01">
+       <part name="body" element="VERA:fingroLk01" />
+   </message>
+   <message name="fincreLk01">
+       <part name="body" element="VERA:fincreLk01" />
+   </message>
+   <message name="findebLk01">
+       <part name="body" element="VERA:findebLk01" />
+   </message>
+   <message name="finiopLk01">
+       <part name="body" element="VERA:finiopLk01" />
+   </message>
+   <message name="finiorLk01">
+       <part name="body" element="VERA:finiorLk01" />
+   </message>
+   <message name="finifaLk01">
+       <part name="body" element="VERA:finifaLk01" />
+   </message>
+   <message name="finifrLk01">
+       <part name="body" element="VERA:finifrLk01" />
+   </message>
+   <message name="finifbLk01">
+       <part name="body" element="VERA:finifbLk01" />
+   </message>
+   <message name="finbeoLk01">
+       <part name="body" element="VERA:finbeoLk01" />
+   </message>
+   <message name="finaanLk01">
+       <part name="body" element="VERA:finaanLk01" />
+   </message>
+   <message name="finbtwLk01">
+       <part name="body" element="VERA:finbtwLk01" />
+   </message>
+   <message name="finbanLk01">
+       <part name="body" element="VERA:finbanLk01" />
+   </message>
+   <message name="finbarLk01">
+       <part name="body" element="VERA:finbarLk01" />
+   </message>
+   <message name="finboeLk01">
+       <part name="body" element="VERA:finboeLk01" />
+   </message>
+   <message name="finbodLk01">
+       <part name="body" element="VERA:finbodLk01" />
+   </message>
+   <message name="finaflLk01">
+       <part name="body" element="VERA:finaflLk01" />
+   </message>
+   <message name="finberLk01">
+       <part name="body" element="VERA:finberLk01" />
+   </message>
+   <message name="finbetLk01">
+       <part name="body" element="VERA:finbetLk01" />
+   </message>
+   <message name="finexiLk01">
+       <part name="body" element="VERA:finexiLk01" />
+   </message>
+   <message name="finexaLk01">
+       <part name="body" element="VERA:finexaLk01" />
+   </message>
+   <message name="fininoLk01">
+       <part name="body" element="VERA:fininoLk01" />
+   </message>
+   <message name="fininmLk01">
+       <part name="body" element="VERA:fininmLk01" />
+   </message>
+   <message name="dosdosLk01">
+       <part name="body" element="VERA:dosdosLk01" />
+   </message>
+   <message name="dosinfLk01">
+       <part name="body" element="VERA:dosinfLk01" />
+   </message>
+   <message name="dosinkLk01">
+       <part name="body" element="VERA:dosinkLk01" />
+   </message>
+   <message name="dosprcLk01">
+       <part name="body" element="VERA:dosprcLk01" />
+   </message>
+   <message name="dosprlLk01">
+       <part name="body" element="VERA:dosprlLk01" />
+   </message>
+   <message name="dosprsLk01">
+       <part name="body" element="VERA:dosprsLk01" />
+   </message>
+   <message name="doszaaLk01">
+       <part name="body" element="VERA:doszaaLk01" />
+   </message>
+   <message name="doszakLk01">
+       <part name="body" element="VERA:doszakLk01" />
+   </message>
+   <message name="doszarLk01">
+       <part name="body" element="VERA:doszarLk01" />
+   </message>
+   <message name="doszasLk01">
+       <part name="body" element="VERA:doszasLk01" />
+   </message>
+   <message name="doszatLk01">
+       <part name="body" element="VERA:doszatLk01" />
+   </message>
+   <message name="woohuiLk01">
+       <part name="body" element="VERA:woohuiLk01" />
+   </message>
+   <message name="vasposLk01">
+       <part name="body" element="VERA:vasposLk01" />
+   </message>
+   <message name="vasbuiLk01">
+       <part name="body" element="VERA:vasbuiLk01" />
+   </message>
+   <message name="vasenpLk01">
+       <part name="body" element="VERA:vasenpLk01" />
+   </message>
+   <message name="algstuLk01">
+       <part name="body" element="VERA:algstuLk01" />
+   </message>
+   <portType name="OntvangAsynchroon">
+       <documentation>Dit portType ondersteunt als operaties alle asynchrone berichten gedefinieerd binnen het sectormodel</documentation>
+           <operation name="Bv03">
+               <input message="StUF:Bv03" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="Fo01">
+               <input message="StUF:Fo01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+             <operation name="Fo03">
+               <input message="StUF:Fo03" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="algrefLk01">
+               <input message="VERA:algrefLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="algbroLk01">
+               <input message="VERA:algbroLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="algaudLk01">
+               <input message="VERA:algaudLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relrelLk01">
+               <input message="VERA:relrelLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relnatLk01">
+               <input message="VERA:relnatLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relrecLk01">
+               <input message="VERA:relrecLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relgroLk01">
+               <input message="VERA:relgroLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relrolLk01">
+               <input message="VERA:relrolLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relconLk01">
+               <input message="VERA:relconLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="reladrLk01">
+               <input message="VERA:reladrLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relcogLk01">
+               <input message="VERA:relcogLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="reltelLk01">
+               <input message="VERA:reltelLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relafsLk01">
+               <input message="VERA:relafsLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relbetLk01">
+               <input message="VERA:relbetLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relinkLk01">
+               <input message="VERA:relinkLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relregLk01">
+               <input message="VERA:relregLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="reloplLk01">
+               <input message="VERA:reloplLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relsigLk01">
+               <input message="VERA:relsigLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="relkenLk01">
+               <input message="VERA:relkenLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="woopubLk01">
+               <input message="VERA:woopubLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="wooreaLk01">
+               <input message="VERA:wooreaLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="wookanLk01">
+               <input message="VERA:wookanLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="wooaanLk01">
+               <input message="VERA:wooaanLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="wootoeLk01">
+               <input message="VERA:wootoeLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="wooregLk01">
+               <input message="VERA:wooregLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="woovooLk01">
+               <input message="VERA:woovooLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="wooproLk01">
+               <input message="VERA:wooproLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="oveoveLk01">
+               <input message="VERA:oveoveLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ovehuuLk01">
+               <input message="VERA:ovehuuLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="oveserLk01">
+               <input message="VERA:oveserLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ovekooLk01">
+               <input message="VERA:ovekooLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="oveondLk01">
+               <input message="VERA:oveondLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="oveinsLk01">
+               <input message="VERA:oveinsLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ovetoeLk01">
+               <input message="VERA:ovetoeLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ovegesLk01">
+               <input message="VERA:ovegesLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="oveuitLk01">
+               <input message="VERA:oveuitLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="oveactLk01">
+               <input message="VERA:oveactLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ovepriLk01">
+               <input message="VERA:ovepriLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="oveovrLk01">
+               <input message="VERA:oveovrLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ondondLk01">
+               <input message="VERA:ondondLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ondordLk01">
+               <input message="VERA:ondordLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ondtaaLk01">
+               <input message="VERA:ondtaaLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ondbesLk01">
+               <input message="VERA:ondbesLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ondstaLk01">
+               <input message="VERA:ondstaLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="ondvooLk01">
+               <input message="VERA:ondvooLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasadrLk01">
+               <input message="VERA:vasadrLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasbagLk01">
+               <input message="VERA:vasbagLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasobjLk01">
+               <input message="VERA:vasobjLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasbouLk01">
+               <input message="VERA:vasbouLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaseleLk01">
+               <input message="VERA:vaseleLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vascolLk01">
+               <input message="VERA:vascolLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vascluLk01">
+               <input message="VERA:vascluLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaseenLk01">
+               <input message="VERA:vaseenLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasrenLk01">
+               <input message="VERA:vasrenLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasvooLk01">
+               <input message="VERA:vasvooLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaseneLk01">
+               <input message="VERA:vaseneLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasgarLk01">
+               <input message="VERA:vasgarLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasgebLk01">
+               <input message="VERA:vasgebLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaspanLk01">
+               <input message="VERA:vaspanLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasbapLk01">
+               <input message="VERA:vasbapLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasverLk01">
+               <input message="VERA:vasverLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vastaxLk01">
+               <input message="VERA:vastaxLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaskenLk01">
+               <input message="VERA:vaskenLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasbuuLk01">
+               <input message="VERA:vasbuuLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaswijLk01">
+               <input message="VERA:vaswijLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaswooLk01">
+               <input message="VERA:vaswooLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasbawLk01">
+               <input message="VERA:vasbawLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasstaLk01">
+               <input message="VERA:vasstaLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasgemLk01">
+               <input message="VERA:vasgemLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaswozLk01">
+               <input message="VERA:vaswozLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasgeoLk01">
+               <input message="VERA:vasgeoLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaspunLk01">
+               <input message="VERA:vaspunLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaswonLk01">
+               <input message="VERA:vaswonLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vascriLk01">
+               <input message="VERA:vascriLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasresLk01">
+               <input message="VERA:vasresLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasgroLk01">
+               <input message="VERA:vasgroLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vaswaaLk01">
+               <input message="VERA:vaswaaLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vastoeLk01">
+               <input message="VERA:vastoeLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finfinLk01">
+               <input message="VERA:finfinLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="fingreLk01">
+               <input message="VERA:fingreLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finverLk01">
+               <input message="VERA:finverLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbojLk01">
+               <input message="VERA:finbojLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbopLk01">
+               <input message="VERA:finbopLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbosLk01">
+               <input message="VERA:finbosLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbegLk01">
+               <input message="VERA:finbegLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="fingroLk01">
+               <input message="VERA:fingroLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="fincreLk01">
+               <input message="VERA:fincreLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="findebLk01">
+               <input message="VERA:findebLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finiopLk01">
+               <input message="VERA:finiopLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finiorLk01">
+               <input message="VERA:finiorLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finifaLk01">
+               <input message="VERA:finifaLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finifrLk01">
+               <input message="VERA:finifrLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finifbLk01">
+               <input message="VERA:finifbLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbeoLk01">
+               <input message="VERA:finbeoLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finaanLk01">
+               <input message="VERA:finaanLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbtwLk01">
+               <input message="VERA:finbtwLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbanLk01">
+               <input message="VERA:finbanLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbarLk01">
+               <input message="VERA:finbarLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finboeLk01">
+               <input message="VERA:finboeLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbodLk01">
+               <input message="VERA:finbodLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finaflLk01">
+               <input message="VERA:finaflLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finberLk01">
+               <input message="VERA:finberLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finbetLk01">
+               <input message="VERA:finbetLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finexiLk01">
+               <input message="VERA:finexiLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="finexaLk01">
+               <input message="VERA:finexaLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="fininoLk01">
+               <input message="VERA:fininoLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="fininmLk01">
+               <input message="VERA:fininmLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="dosdosLk01">
+               <input message="VERA:dosdosLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="dosinfLk01">
+               <input message="VERA:dosinfLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="dosinkLk01">
+               <input message="VERA:dosinkLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="dosprcLk01">
+               <input message="VERA:dosprcLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="dosprlLk01">
+               <input message="VERA:dosprlLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="dosprsLk01">
+               <input message="VERA:dosprsLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="doszaaLk01">
+               <input message="VERA:doszaaLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="doszakLk01">
+               <input message="VERA:doszakLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="doszarLk01">
+               <input message="VERA:doszarLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="doszasLk01">
+               <input message="VERA:doszasLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="doszatLk01">
+               <input message="VERA:doszatLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="woohuiLk01">
+               <input message="VERA:woohuiLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasposLk01">
+               <input message="VERA:vasposLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasbuiLk01">
+               <input message="VERA:vasbuiLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="vasenpLk01">
+               <input message="VERA:vasenpLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+           <operation name="algstuLk01">
+               <input message="VERA:algstuLk01" />
+               <output message="StUF:Bv03" />
+               <fault name="fout" message="StUF:Fo03" />
+           </operation>
+   </portType>
+   <binding name="SOAPOntvangAsynchroon" type="VERA:OntvangAsynchroon">
+       <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+       <!--
+           <documentation>
+               Omdat de uit te wisselen berichten volledig gedefinieerd zijn in het sectormodel cq de StUF-standaard, kunnen we ze zonder verdere encoding (literal) opnemen in de body.
+               Niet ondersteunde berichten kunnen uit de binding en portType worden verwijderd.
+           </documentation>
+       -->
+             <operation name="Bv03">
+               <soap:operation soapAction="http://www.egem.nl/StUF/StUF0301/Bv03" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="Fo01">
+               <soap:operation soapAction="http://www.egem.nl/StUF/StUF0301/Fo01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="Fo03">
+               <soap:operation soapAction="http://www.egem.nl/StUF/StUF0301/Fo03" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="algrefLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/algrefLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="algbroLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/algbroLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="algaudLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/algaudLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relrelLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relrelLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relnatLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relnatLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relrecLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relrecLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relgroLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relgroLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relrolLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relrolLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relconLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relconLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="reladrLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/reladrLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relcogLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relcogLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="reltelLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/reltelLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relafsLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relafsLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relbetLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relbetLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relinkLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relinkLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relregLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relregLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="reloplLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/reloplLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relsigLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relsigLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="relkenLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/relkenLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="woopubLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/woopubLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="wooreaLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/wooreaLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="wookanLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/wookanLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="wooaanLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/wooaanLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="wootoeLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/wootoeLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="wooregLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/wooregLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="woovooLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/woovooLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="wooproLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/wooproLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="oveoveLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/oveoveLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ovehuuLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ovehuuLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="oveserLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/oveserLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ovekooLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ovekooLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="oveondLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/oveondLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="oveinsLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/oveinsLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ovetoeLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ovetoeLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ovegesLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ovegesLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="oveuitLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/oveuitLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="oveactLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/oveactLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ovepriLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ovepriLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="oveovrLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/oveovrLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ondondLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ondondLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ondordLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ondordLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ondtaaLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ondtaaLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ondbesLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ondbesLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ondstaLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ondstaLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="ondvooLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/ondvooLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasadrLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasadrLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasbagLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasbagLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasobjLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasobjLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasbouLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasbouLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaseleLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaseleLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vascolLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vascolLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vascluLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vascluLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaseenLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaseenLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasrenLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasrenLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasvooLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasvooLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaseneLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaseneLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasgarLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasgarLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasgebLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasgebLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaspanLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaspanLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasbapLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasbapLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasverLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasverLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vastaxLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vastaxLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaskenLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaskenLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasbuuLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasbuuLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaswijLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaswijLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaswooLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaswooLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasbawLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasbawLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasstaLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasstaLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasgemLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasgemLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaswozLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaswozLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasgeoLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasgeoLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaspunLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaspunLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaswonLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaswonLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vascriLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vascriLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasresLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasresLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasgroLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasgroLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vaswaaLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vaswaaLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vastoeLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vastoeLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finfinLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finfinLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="fingreLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/fingreLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finverLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finverLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbojLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbojLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbopLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbopLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbosLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbosLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbegLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbegLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="fingroLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/fingroLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="fincreLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/fincreLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="findebLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/findebLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finiopLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finiopLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finiorLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finiorLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finifaLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finifaLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finifrLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finifrLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finifbLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finifbLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbeoLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbeoLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finaanLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finaanLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbtwLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbtwLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbanLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbanLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbarLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbarLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finboeLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finboeLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbodLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbodLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finaflLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finaflLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finberLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finberLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finbetLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finbetLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finexiLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finexiLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="finexaLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/finexaLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="fininoLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/fininoLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="fininmLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/fininmLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="dosdosLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/dosdosLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="dosinfLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/dosinfLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="dosinkLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/dosinkLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="dosprcLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/dosprcLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="dosprlLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/dosprlLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="dosprsLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/dosprsLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="doszaaLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/doszaaLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="doszakLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/doszakLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="doszarLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/doszarLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="doszasLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/doszasLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="doszatLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/doszatLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="woohuiLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/woohuiLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasposLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasposLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasbuiLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasbuiLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="vasenpLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/vasenpLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+             <operation name="algstuLk01">
+               <soap:operation soapAction="http://www.stichting-vera.nl/StUF/sector/vera/0310/algstuLk01" />
+               <input>
+                   <soap:body use="literal" />
+               </input>
+               <output>
+                   <soap:body use="literal" />
+               </output>
+               <fault name="fout">
+                   <soap:fault name="fout" use="literal" />
+               </fault>
+           </operation>
+       </binding>
+         <service name="OntvangAsynchroon">
+           <documentation>
+               Hieronder wordt de concreet aan te roepen service voor het ontvangen van asynchrone BG0301-berichten gedefinieerd.
+           </documentation>
+           <port name="OntvangAsynchroon" binding="VERA:SOAPOntvangAsynchroon">
+               <soap:address location="http://example.com/OntvangAsynchroon" />
+               <!--
+                   <documentation>
+                       <wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+                   </documentation>
+               -->
+           </port>
+       </service>
+</definitions>

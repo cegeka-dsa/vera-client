@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions 
+    name="StUF-VERA0310"
+    xmlns="http://schemas.xmlsoap.org/wsdl/" 
+    xmlns:StUF="http://www.egem.nl/StUF/StUF0301" 
+    xmlns:DGO="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301" 
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301">
+
+    <import namespace="http://www.egem.nl/StUF/StUF0301" location="../../0301/stuf0301_types.wsdl" />
+  
+    <types>
+        <xs:schema>
+            <xs:import namespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301" schemaLocation="dgo01_msg_vraagAntwoord.xsd" />
+        </xs:schema>
+    </types>
+
+    <message name="dgoondLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+        <part name="body" element="DGO:dgoondLa01" />
+    </message>
+    <message name="dgoondLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+        <part name="body" element="DGO:dgoondLv01" />
+    </message>
+
+    <message name="dgoplnDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoplnDi02" />
+    </message>
+    <message name="dgoplnDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoplnDu02" />
+    </message>
+
+    <message name="dgokocDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgokocDi02" />
+    </message>
+    <message name="dgokocDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgokocDu02" />
+    </message>
+
+    <message name="dgokhuDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgokhuDi02" />
+    </message>
+    <message name="dgokhuDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgokhuDu02" />
+    </message>
+  
+    <message name="dgormsDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgormsDi02" />
+    </message>
+    <message name="dgormsDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgormsDu02" />
+    </message>
+  
+    <message name="dgobweDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgobweDi02" />
+    </message>
+    <message name="dgobweDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgobweDu02" />
+    </message>
+  
+    <message name="dgoodlDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoodlDi02" />
+    </message>
+    <message name="dgoodlDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoodlDu02" />
+    </message>
+    
+    <message name="dgogbrDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgogbrDi02" />
+    </message>
+    <message name="dgogbrDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgogbrDu02" />
+    </message>
+  
+    <message name="dgospcDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgospcDi02" />
+    </message>
+    <message name="dgospcDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgospcDu02" />
+    </message>
+  
+    <message name="dgoorzDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoorzDi02" />
+    </message>
+    <message name="dgoorzDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoorzDu02" />
+    </message>
+  
+    <message name="dgorsjLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+        <part name="body" element="DGO:dgorsjLv01" />
+    </message>
+    <message name="dgorsjLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+        <part name="body" element="DGO:dgorsjLa01" />
+    </message>
+
+    <message name="dgoblgLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoblgLv01" />
+    </message>
+    <message name="dgoblgLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoblgLa01" />
+    </message>
+
+    <message name="dgoiotDi02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoiotDi02" />
+    </message>
+    <message name="dgoiotDu02" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoiotDu02" />
+    </message>
+
+    <message name="dgoinsLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoinsLv01" />
+    </message>
+    <message name="dgoinsLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoinsLa01" />
+    </message>
+
+    <message name="dgosttLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgosttLv01" />
+    </message>
+    <message name="dgosttLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgosttLa01" />
+    </message>
+
+    <message name="dgoosjLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoosjLv01" />
+    </message>
+    <message name="dgoosjLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoosjLa01" />
+    </message>
+
+    <message name="dgoohtLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoohtLv01" />
+    </message>
+    <message name="dgoohtLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoohtLa01" />
+    </message>
+
+    <message name="dgoovhLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoovhLv01" />
+    </message>
+    <message name="dgoovhLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoovhLa01" />
+    </message>
+
+    <message name="dgokcoLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgokcoLv01" />
+    </message>
+    <message name="dgokcoLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgokcoLa01" />
+    </message>
+
+    <message name="dgoeehLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoeehLv01" />
+    </message>
+    <message name="dgoeehLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoeehLa01" />
+    </message>
+
+    <message name="dgomstLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgomstLv01" />
+    </message>
+    <message name="dgomstLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgomstLa01" />
+    </message>
+
+    <message name="dgomsoLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgomsoLv01" />
+    </message>
+    <message name="dgomsoLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgomsoLa01" />
+    </message>
+  
+    <message name="dgosleLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgosleLv01" />
+    </message>
+    <message name="dgosleLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgosleLa01" />
+    </message>
+
+    <message name="dgomusLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgomusLv01" />
+    </message>
+    <message name="dgomusLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgomusLa01" />
+    </message>
+  
+    <message name="dgomutLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgomutLv01" />
+    </message>
+    <message name="dgomutLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgomutLa01" />
+    </message>
+
+    <message name="dgoprjLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoprjLv01" />
+    </message>
+    <message name="dgoprjLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgoprjLa01" />
+    </message>
+
+    <message name="dgolndLv01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgolndLv01" />
+    </message>
+    <message name="dgolndLa01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <part name="body" element="DGO:dgolndLa01" />
+    </message>
+
+  <portType name="BeantwoordVraag" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <operation name="dgoondLv01">
+          <input message="DGO:dgoondLv01" />
+          <output message="DGO:dgoondLa01" />
+          <fault name="fout" message="StUF:Fo02" />
+      </operation>
+    
+      <operation name="dgoplnDi02">
+        <input message="DGO:dgoplnDi02" />
+        <output message="DGO:dgoplnDu02" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+    
+      <operation name="dgokhuDi02">
+        <input message="DGO:dgokhuDi02" />
+        <output message="DGO:dgokhuDu02" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+    
+      <operation name="dgokocDi02">
+        <input message="DGO:dgokocDi02" />
+        <output message="DGO:dgokocDu02" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+    
+      <operation name="dgormsDi02">
+        <input message="DGO:dgormsDi02" />
+        <output message="DGO:dgormsDu02" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+    
+      <operation name="dgobweDi02">
+        <input message="DGO:dgobweDi02" />
+        <output message="DGO:dgobweDu02" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+    
+      <operation name="dgoodlDi02">
+        <input message="DGO:dgoodlDi02" />
+        <output message="DGO:dgoodlDu02" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+    
+      <operation name="dgogbrDi02">
+        <input message="DGO:dgogbrDi02" />
+        <output message="DGO:dgogbrDu02" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+    
+      <operation name="dgospcDi02">
+        <input message="DGO:dgospcDi02" />
+        <output message="DGO:dgospcDu02" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+    
+      <operation name="dgoorzDi02">
+        <input message="DGO:dgoorzDi02" />
+        <output message="DGO:dgoorzDu02" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+  
+      <operation name="dgorsjLv01">
+        <input message="DGO:dgorsjLv01" />
+        <output message="DGO:dgorsjLa01" />
+        <fault name="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgoblgLv01">
+        <input message="DGO:dgoblgLv01" />
+        <output message="DGO:dgoblgLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgoiotDi02">
+        <input message="DGO:dgoiotDi02" />
+        <output message="DGO:dgoiotDu02" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgoinsLv01">
+        <input message="DGO:dgoinsLv01" />
+        <output message="DGO:dgoinsLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgosttLv01">
+        <input message="DGO:dgosttLv01" />
+        <output message="DGO:dgosttLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgoosjLv01">
+        <input message="DGO:dgoosjLv01" />
+        <output message="DGO:dgoosjLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgoohtLv01">
+        <input message="DGO:dgoohtLv01" />
+        <output message="DGO:dgoohtLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgoovhLv01">
+        <input message="DGO:dgoovhLv01" />
+        <output message="DGO:dgoovhLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgokcoLv01">
+        <input message="DGO:dgokcoLv01" />
+        <output message="DGO:dgokcoLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>  
+  
+      <operation name="dgoeehLv01">
+        <input message="DGO:dgoeehLv01" />
+        <output message="DGO:dgoeehLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgomstLv01">
+        <input message="DGO:dgomstLv01" />
+        <output message="DGO:dgomstLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgomsoLv01">
+        <input message="DGO:dgomsoLv01" />
+        <output message="DGO:dgomsoLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgosleLv01">
+        <input message="DGO:dgosleLv01" />
+        <output message="DGO:dgosleLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgomusLv01">
+        <input message="DGO:dgomusLv01" />
+        <output message="DGO:dgomusLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+  
+      <operation name="dgomutLv01">
+        <input message="DGO:dgomutLv01" />
+        <output message="DGO:dgomutLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>  
+    
+      <operation name="dgoprjLv01">
+        <input message="DGO:dgoprjLv01" />
+        <output message="DGO:dgoprjLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+
+      <operation name="dgolndLv01">
+        <input message="DGO:dgolndLv01" />
+        <output message="DGO:dgolndLa01" />
+        <fault name ="fout" message="StUF:Fo02" />
+      </operation>
+  </portType>
+
+    <binding name="SOAPBeantwoordVraag" type="DGO:BeantwoordVraag"  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+      
+      <operation name="dgoondLv01">
+          <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoondLv01" />
+          <input>
+              <soap:body use="literal" />
+          </input>
+          <output>
+              <soap:body use="literal" />
+          </output>
+          <fault name="fout">
+              <soap:fault name="fout" use="literal" />
+          </fault>
+      </operation>
+      
+      <operation name="dgoplnDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoplnDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgokocDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgokocDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgokhuDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgokhuDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgormsDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgormsDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgobweDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgobweDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgoodlDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoodlDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgogbrDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgogbrDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgospcDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgospcDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+      
+      <operation name="dgoorzDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoorzDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+      
+      <operation name="dgorsjLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgorsjLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgoblgLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoblgLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgoiotDi02">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoiotDi02" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgoinsLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoinsLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgosttLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgosttLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgoosjLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoosjLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgoohtLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoohtLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgoovhLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoovhLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgokcoLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgokcoLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgomstLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgomstLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgomsoLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgomsoLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgoeehLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoeehLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgosleLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgosleLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgomusLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgomusLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+      
+      <operation name="dgomutLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgomutLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+
+      <operation name="dgoprjLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgoprjLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+      
+      <operation name="dgolndLv01">
+        <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301/dgolndLv01" />
+        <input>
+          <soap:body use="literal" />
+        </input>
+        <output>
+          <soap:body use="literal" />
+        </output>
+        <fault name="fout">
+          <soap:fault name="fout" use="literal" />
+        </fault>
+      </operation>
+      
+    </binding>
+
+    <service name="BeantwoordVraag">
+        <documentation>Hieronder wordt de concreet aan te roepen service voor het ontvangen van synchrone vraagberichten gedefinieerd.</documentation>
+        <port name="BeantwoordVraag" binding="DGO:SOAPBeantwoordVraag">
+            <soap:address location="https://vera.meerstedewonen.nl/dgo" />
+        </port>
+    </service>
+
+</definitions>

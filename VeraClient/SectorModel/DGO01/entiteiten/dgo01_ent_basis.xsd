@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        xmlns:DGO="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301"
+        targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301">
+
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../VERA0301/entiteiten/vera0301_stuf_simpleTypes.xsd"/>
+  <import namespace="http://www.stichting-vera.nl/StUF/sector/vera/0310" schemaLocation="dgo01_vera_ent_basis-restricted.xsd"/>
+
+  <include schemaLocation="./dgo01_simpleTypes.xsd"/>
+
+  <annotation>
+    <documentation xml:lang="nl">
+    </documentation>
+  </annotation>
+
+  <!-- Onderhoud -->
+  <complexType name="DGOOND-basis">
+    <complexContent>
+      <extension base="VERA:ONDOND-restricted">
+        <sequence minOccurs="0">
+          <element name="status" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+
+          <element name="meldTijd" type="DGO:Onderhoudsverzoekmeldtijd-e" nillable="true" minOccurs="0"/>
+
+          <element name="melder" type="DGO:DGOREL-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="huurder" type="DGO:DGOREL-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+
+          <element name="adres" type="VERA:VASADR-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="collectiefObject" type="VERA:VASCOL-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+
+          <element name="aanHuurderDoorbelastBedrag" type="DGO:AanHuurderDoorbelastBedrag-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+
+          <element name="voorkeursDatum" type="DGO:VoorkeursDatum-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="dagDeel" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="uitersteGereedDatum" type="DGO:UitersteGereedDatum-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+
+          <element name="opgelostDoorTips" type="DGO:OpgelostDoorTips-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="oplossingsTip" type="DGO:OplossingsTip-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+
+          <element name="wijzigingToestaan" type="DGO:WijzigingToestaan-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="wijzigingOmschrijvingOfFotoToestaan" type="DGO:WijzigingOmschrijvingOfFotoToestaan-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+
+          <element name="keuzeboomStap" type="DGO:DGOKBS-basis" nillable="true" minOccurs="0" maxOccurs="1"/>         
+          <element name="oorzaak" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+
+          <element name="onderhoudsorders" type="DGO:DGOONDDGOORD-basis" nillable="true" minOccurs="0" />
+          <element name="onderhoudstaken" type="DGO:DGOONDDGOTAA-basis" nillable="true" minOccurs="0" />
+
+          <element name="inspecties" type="DGO:DGOONDDGOAFS-basis" nillable="true" minOccurs="0" />
+          <element name="opmerkingen" type="DGO:DGOONDDGOOPM-basis" nillable="true" minOccurs="0" />
+
+          <element name="huurderAccepteertKosten" type="DGO:HuurderAccepteertKosten-e" nillable="true" minOccurs="0"/>
+          <element name="onderhoudstype" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOSAF-kerngegevens">
+    <annotation>
+      <documentation>Planning</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGORSJ-basis">
+    <annotation>
+      <documentation>Reparatiesjabloon</documentation>
+    </annotation>
+        <sequence minOccurs="0">
+          <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="omschrijving" type="DGO:ReparatieSjabloonOmschrijving-e" nillable="true" minOccurs="0"/>
+          <element name="inspectie" type="DGO:Inspectie-e" nillable="true" minOccurs="0"/>
+          <element name="inspectieDuur" type="DGO:InspectieDuur-e" nillable="true" minOccurs="0"/>
+          <element name="oplossingTips" type="DGO:DGORSJDGOTIP-basis" nillable="true" minOccurs="0"/>
+          <element name="reparatiesjabloonregels" type="DGO:DGORSJDGORSR-basis" nillable="true" minOccurs="0"/>
+        </sequence>
+  </complexType>
+
+  <complexType name="DGORSJ-kerngegevens">
+    <complexContent>
+      <restriction base="DGO:DGORSJ-basis">
+        <sequence>
+          <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGORSJDGORSR-basis">
+    <annotation>
+      <documentation>Associatie naar reparatiesjabloonregels</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="reparatiesjabloonregel" type="DGO:DGORSR-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGORSR-basis">
+    <annotation>
+      <documentation>Reparatiesjabloonregel</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="standaardtaak" type="DGO:DGOSTT-kerngegevens" nillable="true" minOccurs="0"/>
+      <element name="aantal" type="DGO:UitTeVoerenAantal-e" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOOSJ-basis">
+    <annotation>
+      <documentation>Onderhoudssjabloon</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+      <element name="omschrijving" type="DGO:OnderhoudssjabloonOmschrijving-e" nillable="true" minOccurs="0"/>
+      <element name="onderhoudssjabloonregels" type="DGO:DGOOSJDGOOSR-basis" nillable="true" minOccurs="0"/>
+      <element name="ruimtesoorten" type="DGO:DGOOSJDGORMS-basis" nillable="true" minOccurs="0"/>
+      <element name="clusters" type="DGO:DGOOSJVASCLU-basis" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOOSJ-kerngegevens">
+    <complexContent>
+      <restriction base="DGO:DGOOSJ-basis">
+        <sequence>
+          <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOOSJDGOOSR-basis">
+    <annotation>
+      <documentation>Associatie naar onderhoudssjabloonregels</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="onderhoudssjabloonregel" type="DGO:DGOOSR-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOOSJDGORMS-basis">
+    <annotation>
+      <documentation>Associatie naar ruimtesoorten</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="ruimteSoort" type="DGO:DGORMS-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOOSJVASCLU-basis">
+    <annotation>
+      <documentation>Associatie naar clusters</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="cluster" type="VERA:VASCLU-kerngegevens" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOOSR-basis">
+    <annotation>
+      <documentation>Onderhoudssjabloonregel</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="standaardtaak" type="DGO:DGOSTT-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="aantal" type="DGO:UitTeVoerenAantal-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="ruimteSoort" type="DGO:DGORMS-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="wordenKostenDoorbelast" type="DGO:WordenKostenDoorbelast-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="kostencode" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOREL-basis">
+     <complexContent>
+       <extension base="VERA:RELREL-restricted">
+         <sequence minOccurs="0">
+           <element name="contactgegevens" type="DGO:DGORELDGOCOG-basis" nillable="true" minOccurs="0" />
+           <element name="adressen" type="DGO:DGORELDGOADR-basis" nillable="true" minOccurs="0" />
+         </sequence>
+       </extension>
+     </complexContent>
+    </complexType>
+
+  <complexType name="DGOPLN-basis">
+    <annotation>
+      <documentation>Planning</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="onderhoudsverzoek" type="VERA:ONDOND-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+
+      <element name="afspraken" type="DGO:DGOPLNDGOAFS-basis" nillable="true" minOccurs="0"/>
+
+      <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  
+  <complexType name="DGOKBS-basis">
+    <annotation>
+      <documentation>KeuzeboomStap</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+      <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+      <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+
+      <element name="ruimteSoort" type="DGO:DGORMS-basis" nillable="true" minOccurs="0"/>
+      <element name="bouwElement" type="DGO:DGOBWE-basis" nillable="true" minOccurs="0"/>
+      <element name="onderdeel" type="DGO:DGOODL-basis" nillable="true" minOccurs="0"/>
+      <element name="gebrek" type="DGO:DGOGBR-basis" nillable="true" minOccurs="0"/>      
+      <element name="omschrijving" type="DGO:Keuzeboomstapomschrijving-e" nillable="true" minOccurs="0"/>
+      <element name="reparatiesjabloon" type="DGO:DGORSJ-kerngegevens" nillable="true" minOccurs="0"/>
+
+      <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOKBS"/>
+    <attributeGroup ref="StUF:entiteit"/>-->
+  </complexType>
+
+  <complexType name="DGOKBS-kerngegevens">
+    <complexContent>
+      <restriction base="DGO:DGOKBS-basis">
+        <sequence>
+          <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  
+  <complexType name="DGOOPM-basis">
+    <annotation>
+      <documentation>Opmerkingen van huurders, leveranciers, kcc medewerkers, etc.</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+      <element name="bronsysteem" type="VERA:ALGBRO-basis" nillable="true" minOccurs="0"/>
+      <element name="auditInfo" type="VERA:ALGAUD-basis" nillable="true" minOccurs="0"/>
+
+      <element name="aanmaakDatum" type="DGO:AanmaakDatum-e" nillable="true" minOccurs="0"/>
+      <element name="soort" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+      <element name="opmerking" type="DGO:Opmerking-e" nillable="true" minOccurs="0"/>
+      <element name="wijzigingToestaan" type="DGO:WijzigingToestaan-e" nillable="true" minOccurs="0"/>
+
+      <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="sturingslabels" type="VERA:ALGSTUALGSTU-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOONDDGOOPM-basis">
+    <annotation>
+      <documentation>
+        Generieke associatie klasse naar opmerkingen
+      </documentation>
+    </annotation>
+      <sequence minOccurs="0">
+        <element name="opmerking" type="DGO:DGOOPM-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOONDDGOOPM"/>
+    <attributeGroup ref="StUF:relatie"/>-->
+  </complexType>
+
+  <complexType name="DGORSJDGOTIP-basis">
+    <annotation>
+      <documentation>
+        Generieke associatie klasse naar tips
+      </documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="oplossingTip" type="DGO:DGOTIP-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOONDDGOOPM"/>
+    <attributeGroup ref="StUF:relatie"/>-->
+  </complexType>
+
+  <complexType name="DGOTIP-basis">
+    <annotation>
+      <documentation>Oplossingtips</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="code" type="DGO:OplossingsTipCode-e" nillable="true" minOccurs="0"/>
+      <element name="titel" type="DGO:OplossingTitel-e" nillable="true" minOccurs="0"/>
+      <element name="oplossing" type="DGO:OplossingsTip-e" nillable="true" minOccurs="0"/>
+    </sequence>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOOPM"/>
+    <attributeGroup ref="StUF:entiteit"/>-->
+  </complexType>
+
+  <complexType name="DGOPLNDGOAFS-basis">
+    <annotation>
+      <documentation>
+        Generieke associatie klasse naar afspraken
+      </documentation>
+    </annotation>
+      <sequence minOccurs="0">
+        <element name="afspraak" type="DGO:DGOAFS-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOONDDGOOPM"/>
+    <attributeGroup ref="StUF:relatie"/>-->
+  </complexType>
+
+  <complexType name="DGOONDDGOORD-basis">
+    <complexContent>
+      <extension base="VERA:ONDONDONDORD-restricted">
+        <sequence minOccurs="0">
+          <element name="onderhoudsorder" type="DGO:DGOORD-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOORD-basis">
+    <complexContent>
+      <extension base="VERA:ONDORD-basis">
+        <sequence minOccurs="0">
+          <element name="uitvoerende" type="VERA:RELREC-basis" nillable="true" minOccurs="0" />
+          <element name="uitvoerDatum" type="DGO:UitvoerDatum-e" nillable="true" minOccurs="0" />
+          <element name="uitvoerStartTijd" type="DGO:UitvoerStartTijd-e" nillable="true" minOccurs="0" />
+          <element name="uitvoerEindTijd" type="DGO:UitvoerEindTijd-e" nillable="true" minOccurs="0" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOONDDGOAFS-basis">
+    <complexContent>
+      <extension base="VERA:ONDONDRELAFS-restricted">
+        <sequence minOccurs="0">
+          <element name="inspectie" type="DGO:DGOAFS-basis" minOccurs="0" maxOccurs="unbounded"  />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+    <complexType name="DGOAFS-basis">
+    <complexContent>
+      <extension base="VERA:RELAFS-basis">
+        <sequence minOccurs="0">
+          <element name="type" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="status" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="handtekeningHuurder" type="DGO:Handtekening-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="huurderNietAkkoord" type="DGO:HuurderNietAkkoord-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="huurderNietThuis" type="DGO:HuurderNietThuis-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGORELDGOCOG-basis">
+    <complexContent>
+      <extension base="VERA:RELRELRELCOG-restricted">
+        <sequence minOccurs="0">
+          <element name="contactgegeven" type="VERA:RELCOG-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGORELDGOADR-basis">
+    <complexContent>
+      <extension base="VERA:RELRELRELADR-restricted">
+        <sequence minOccurs="0">
+          <element name="adres" type="DGO:DGOADR-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOADR-basis">
+    <complexContent>
+      <extension base="VERA:RELADR-restricted">
+        <sequence minOccurs="0">
+          <element name="adres" type="VERA:VASADR-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="land" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="ingangsdatum" type="DGO:Ingangsdatum-e" nillable="true" minOccurs="0" maxOccurs="1" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGORMS-basis">
+    <annotation>
+      <documentation>Ruimtesoort</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+          <element name="afbeelding" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGORMS"/>
+    <attributeGroup ref="StUF:entiteit"/>-->
+  </complexType>
+
+  <complexType name="DGOBWE-basis">
+    <annotation>
+      <documentation>Bouwelement</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+          <element name="afbeelding" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOBWE"/>
+    <attributeGroup ref="StUF:entiteit"/>-->
+  </complexType>
+
+  <complexType name="DGOODL-basis">
+    <annotation>
+      <documentation>Onderdeel</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+          <element name="afbeelding" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOODL"/>
+    <attributeGroup ref="StUF:entiteit"/>-->
+  </complexType>
+
+  <complexType name="DGOGBR-basis">
+    <annotation>
+      <documentation>Gebrek</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+          <element name="afbeelding" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOGBR"/>
+    <attributeGroup ref="StUF:entiteit"/>-->
+  </complexType>
+
+  <complexType name="DGOSPC-basis">
+    <annotation>
+      <documentation>Specificatie</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOSPC"/>
+    <attributeGroup ref="StUF:entiteit"/>-->
+  </complexType>
+
+  <complexType name="DGOORZ-basis">
+    <annotation>
+      <documentation>Oorzaak</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+          <element name="standaard" type="DGO:IsStandaardOorzaakCode-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+    <!--<attribute ref="StUF:entiteittype" fixed="DGOORZ"/>
+    <attributeGroup ref="StUF:entiteit"/>-->
+  </complexType>
+
+  <complexType name="DGOBLG-basis">
+    <annotation>
+      <documentation>Bijlage</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+      <element name="titel" type="DGO:BijlageTitel-e" nillable="true" minOccurs="0"/>
+      <element name="omschrijving" type="DGO:BijlageOmschrijving-e" nillable="true" minOccurs="0"/>
+      <element name="bestandsnaam" type="DGO:BijlageBestandsnaam-e" nillable="true" minOccurs="0"/>
+      <element name="extensie" type="DGO:BijlageExtensie-e" nillable="true" minOccurs="0"/>
+      <element name="bijlage" type="DGO:Bijlage-e" nillable="true" minOccurs="0"/>
+      <element name="verwijderingToestaan" type="DGO:VerwijderingBijlageToestaan-e" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOIOT-basis">
+    <annotation>
+      <documentation>Is onderhoud toegestaan door eigenaar</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="isOnderhoudToegestaanDoorEigenaar" type="DGO:IsOnderhoudToegestaanDoorEigenaar-e" nillable="true" minOccurs="0"/>
+      <element name="melding" type="StUF:Melding" minOccurs="0"/>
+    </sequence>
+  </complexType> 
+
+  <complexType name="DGOINS-basis">
+    <annotation>
+      <documentation>Onderhoudsinspectie</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="afspraak" type="DGO:DGOAFS-basis" nillable="true" minOccurs="0" maxOccurs="1"/>  
+      <element name="onderhoudsverzoek" type="DGO:DGOOND-basis" nillable="true" minOccurs="0" maxOccurs="1"/>  
+      <element name="opzegging" type="DGO:DGOOPZ-basis" nillable="true" minOccurs="0" maxOccurs="1"/>  
+      <element name="contract" type="VERA:OVEOVR-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="garantieAantal" type="DGO:garantieAantal-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="zelfAangebrachteVoorzieningAantal" type="DGO:zelfAangebrachteVoorzieningAantal-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOOPZ-basis">
+    <annotation>
+      <documentation>Opzegging</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+      <element name="nieuwAdres" type="DGO:DGOADR-basis" nillable="true" minOccurs="0"/>
+      <element name="contactgegevens" type="DGO:DGORELDGOCOG-basis" nillable="true" minOccurs="0"/>
+      <element name="verhuurbaarPerDatum" type="DGO:VerhuurbaarPerDatum-e" nillable="true" minOccurs="0"/>
+      <element name="verhuurbaarPerDatumDefinitief" type="DGO:VerhuurbaarPerDatumDefinitief-e" nillable="true" minOccurs="0"/>
+      <element name="redenOpzegging" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+      <element name="gasElektraControleDatum" type="DGO:gasElektraControleDatum-e" nillable="true" minOccurs="0"/>
+      <element name="mutatieSoort" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+      <element name="mutatieType" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>           
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOTAA-basis">
+    <annotation>
+      <documentation>Onderhoudstaak</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ONDTAA-basis">
+        <sequence minOccurs="0">
+          <element name="onderhoudsverzoek" type="VERA:ONDOND-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="aanmaakDatum" type="DGO:AanmaakDatum-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="aanmaakTijd" type="DGO:AanmaakTijd-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="ruimteSoort" type="DGO:DGORMS-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="bouwElement" type="DGO:DGOBWE-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="onderdeel" type="DGO:DGOODL-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="reparatiesjabloon" type="DGO:DGORSJ-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="onderhoudssjabloon" type="DGO:DGOOSJ-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="standaardTaak" type="DGO:DGOSTT-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="uitTeVoerenAantal" type="DGO:UitTeVoerenAantal-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="eenheidCode" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="afhandelDuur" type="DGO:AfhandelDuur-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="onderhoudSpecialisme" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="kostencode" type="DGO:DGOKCO-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="prijscomponenten" type="DGO:DGOTAAOVEPRI-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="betalerSoort" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1" />
+          <element name="betaler" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1"/>
+          <element name="verhaalbareKosten" type="DGO:OnderhoudstaakVerhaalbareKosten-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="verkoopwijze" type="DGO:Verkoopwijze-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="opmerkingen" type="DGO:DGOTAADGOOPM-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOONDDGOTAA-basis">
+    <annotation>
+      <documentation>Associatie naar onderhoudstaak</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="onderhoudstaak" type="DGO:DGOTAA-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOTAAOVEPRI-basis">
+    <annotation>
+      <documentation>Associatie naar prijscomponent</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="prijscomponent" type="VERA:OVEPRI-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOTAADGOOPM-basis">
+    <annotation>
+      <documentation>Associatie naar opmerking</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="opmerking" type="DGO:DGOOPM-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+ </complexType>
+
+  <complexType name="DGOSTT-basis">
+    <annotation>
+      <documentation>Standaardtaak</documentation>
+    </annotation>
+    <sequence minOccurs="0">          
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="omschrijving" type="DGO:Standaardtaakomschrijving-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="bouwElement" type="DGO:DGOBWE-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="onderdeel" type="DGO:DGOODL-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="onderhoudSpecialisme" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="afhandelDuur" type="DGO:AfhandelDuur-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="aantal" type="DGO:UitTeVoerenAantal-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="eenheidCode" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="prijscomponenten" type="DGO:DGOSTTOVEPRI-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="ruimtesoorten" type="DGO:DGOSTTDGORMS-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOSTT-kerngegevens">
+    <annotation>
+      <documentation>Standaardtaak kerngegevens</documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="DGO:DGOSTT-basis">
+        <sequence minOccurs="0">
+          <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="omschrijving" type="DGO:Standaardtaakomschrijving-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  
+  <complexType name="DGOSTTOVEPRI-basis">
+    <annotation>
+      <documentation>Associatie naar prijscomponenten</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="prijscomponent" type="VERA:OVEPRI-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+ </complexType>
+
+  <complexType name="DGOSTTDGORMS-basis">
+    <annotation>
+      <documentation>Associatie naar ruimtesoorten</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="ruimteSoort" type="DGO:DGORMS-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOOHT-basis">
+    <annotation>
+      <documentation>Onderhoudstype</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+          <element name="kostencode" type="VERA:ALGREF-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="kostencodeDoorbelastenAanHuurder" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="kostencodeDoorbelastenAanDerde" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOKCO-basis">
+    <annotation>
+      <documentation>Kostencode</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+          <element name="btwTariefDoorbelasten" type="VERA:FINBTW-kerngegevens" nillable="true" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOKCO-kerngegevens">
+    <complexContent>
+      <extension base="VERA:ALGREF-kerngegevens">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOEEH-basis">
+    <annotation>
+      <documentation>Eenheidcode</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOBLGDGOBLG-basis">
+    <sequence minOccurs="0">
+      <element name="bijlage" type="DGO:DGOBLG-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOMST-basis">
+    <annotation>
+      <documentation>Meterstand</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="meterSoort" type="DGO:DGOMSO-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="ruimteSoort" type="DGO:DGORMS-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="meternummer" type="DGO:Meternummer-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="vloeistofKleur" type="DGO:VloeistofKleur-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="stand" type="DGO:Meterstand-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="beginstandDatum" type="DGO:BeginstandDatum-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="eindstandDatum" type="DGO:EindstandDatum-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOMSO-basis">
+    <annotation>
+      <documentation>Metersoort</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOMSO-kerngegevens">
+    <annotation>
+      <documentation>Metersoort</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-kerngegevens">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOMSTDGOMST-basis">
+    <sequence minOccurs="0">
+      <element name="meterstand" type="DGO:DGOMST-basis" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOSLE-basis">
+    <annotation>
+      <documentation>Sleutel</documentation>
+    </annotation>
+      <sequence minOccurs="0">
+        <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+        <element name="omschrijving" type="DGO:SleutelOmschrijving-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+        <element name="status" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+        <element name="aantal" type="DGO:SleutelAantal-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      </sequence>
+  </complexType>
+
+  <complexType name="DGOMUS-basis">
+    <annotation>
+      <documentation>Mutatiesoorten</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOMUT-basis">
+    <annotation>
+      <documentation>Mutatietypes</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOPRJ-basis">
+    <annotation>
+      <documentation>Projecten</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="naam" type="DGO:Projectnaam-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="omschrijving" type="DGO:Projectomschrijving-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="status" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="begindatum" type="DGO:Projectbegindatum-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="einddatum" type="DGO:Projecteinddatum-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="werksoort" type="DGO:DGOWSO-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOWSO-basis">
+    <annotation>
+      <documentation>Mutatietypes</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOLND-basis">
+    <annotation>
+      <documentation>Landen</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:ALGREF-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+</schema>

@@ -1,0 +1,1 @@
+xsd /c /n:vera ..\SectorModel\DGO01\entiteiten\dgo01_vera_ent_basis-restricted.xsd ..\SectorModel\DGO01\vraagAntwoord\dgo01_msg_stuf_vraagAntwoord.xsd  ..\SectorModel\DGO01\vraagAntwoord\dgo01_msg_vraagAntwoord.xsd

@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        xmlns:DGO="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301"
+        xmlns:base="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301"
+        targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301"
+        elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../0301/stuf0301.xsd"/>
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../VERA0301/entiteiten/vera0301_stuf_simpleTypes.xsd"/>
+
+  <annotation>
+    <documentation xml:lang="nl">Verticaal sectormodel simpletypes
+    </documentation>
+  </annotation>
+
+  <!--ComplexTypes voor metagegevens-->
+  <complexType name="AanHuurderDoorbelastBedrag-e">
+    <simpleContent>
+      <extension base="DGO:AanHuurderDoorbelastBedrag">
+        <attributeGroup ref="StUF:element"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+ 
+   <complexType name="Onderhoudsverzoekmeldtijd-e">
+    <simpleContent>
+      <extension base="DGO:Onderhoudsverzoekmeldtijd" />
+    </simpleContent>
+  </complexType>
+
+   <complexType name="VoorkeursDatum-e">
+    <simpleContent>
+      <extension base="DGO:VoorkeursDatum" />
+    </simpleContent>
+  </complexType>
+
+   <complexType name="Keuzeboomstapomschrijving-e">
+    <simpleContent>
+      <extension base="DGO:Keuzeboomstapomschrijving" />
+    </simpleContent>
+  </complexType>
+
+   <complexType name="OpgelostDoorTips-e">
+    <simpleContent>
+      <extension base="DGO:OpgelostDoorTips" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="OplossingsTip-e">
+    <simpleContent>
+      <extension base="DGO:OplossingsTip" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="OplossingsTipCode-e">
+    <simpleContent>
+      <extension base="DGO:OplossingsTipCode" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="WijzigingToestaan-e">
+    <simpleContent>
+      <extension base="DGO:WijzigingToestaan" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="WijzigingOmschrijvingOfFotoToestaan-e">
+    <simpleContent>
+      <extension base="DGO:WijzigingOmschrijvingOfFotoToestaan" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="UitvoerDatum-e">
+    <simpleContent>
+      <extension base="DGO:UitvoerDatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="UitvoerStartTijd-e">
+    <simpleContent>
+      <extension base="DGO:UitvoerStartTijd" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="UitvoerEindTijd-e">
+    <simpleContent>
+      <extension base="DGO:UitvoerEindTijd" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Opmerking-e">
+    <simpleContent>
+      <extension base="DGO:Opmerking" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="HuurderAccepteertKosten-e">
+    <simpleContent>
+      <extension base="DGO:HuurderAccepteertKosten" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Melding-e">
+    <simpleContent>
+      <extension base="DGO:Melding" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="AnnuleringsOmschrijving-e">
+    <simpleContent>
+      <extension base="DGO:AnnuleringsOmschrijving" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="IsAfspraakNoodzakelijk-e">
+    <simpleContent>
+      <extension base="DGO:IsAfspraakNoodzakelijk" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="UitersteGereedDatum-e">
+    <simpleContent>
+      <extension base="DGO:UitersteGereedDatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="TePlannenDatum-e">
+    <simpleContent>
+      <extension base="DGO:TePlannenDatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="KanOnderhoudsverzoekCreeren-e">
+    <simpleContent>
+      <extension base="DGO:KanOnderhoudsverzoekCreeren" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="WordenKostenDoorbelast-e">
+    <simpleContent>
+      <extension base="DGO:WordenKostenDoorbelast" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="IsNacalculatie-e">
+    <simpleContent>
+      <extension base="DGO:IsNacalculatie" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="HeeftServiceContract-e">
+    <simpleContent>
+      <extension base="DGO:HeeftServiceContract" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="WordtDoorbelastVanwegeOorzaak-e">
+    <simpleContent>
+      <extension base="DGO:WordtDoorbelastVanwegeOorzaak" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="DoorTeBelastenBedrag-e">
+    <simpleContent>
+      <extension base="DGO:DoorTeBelastenBedrag" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Zoekvoorwaarde-e">
+    <simpleContent>
+      <extension base="DGO:Zoekvoorwaarde" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="IsOorzaakCodeNoodzakelijk-e">
+    <simpleContent>
+      <extension base="DGO:IsOorzaakCodeNoodzakelijk" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="OplossingVoorDatum-e">
+    <simpleContent>
+      <extension base="DGO:OplossingVoorDatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="InspectieDuur-e">
+    <simpleContent>
+      <extension base="DGO:InspectieDuur" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="OplossingTitel-e">
+    <simpleContent>
+      <extension base="DGO:OplossingTitel" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="IsStandaardOorzaakCode-e">
+    <simpleContent>
+      <extension base="DGO:IsStandaardOorzaakCode" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Inspectie-e">
+    <simpleContent>
+      <extension base="DGO:Inspectie" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="BijlageTitel-e">
+    <simpleContent>
+      <extension base="DGO:BijlageTitel" />
+    </simpleContent>
+  </complexType>
+  
+  <complexType name="BijlageOmschrijving-e">
+    <simpleContent>
+      <extension base="DGO:BijlageOmschrijving" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="BijlageBestandsnaam-e">
+    <simpleContent>
+      <extension base="DGO:BijlageBestandsnaam" />
+    </simpleContent>
+  </complexType>
+  
+  <complexType name="BijlageExtensie-e">
+    <simpleContent>
+      <extension base="DGO:BijlageExtensie" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Bijlage-e">
+    <simpleContent>
+      <extension base="DGO:Bijlage" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="VerwijderingBijlageToestaan-e">
+    <simpleContent>
+      <extension base="DGO:VerwijderingBijlageToestaan" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="IsOnderhoudToegestaanDoorEigenaar-e">
+    <simpleContent>
+      <extension base="DGO:IsOnderhoudToegestaanDoorEigenaar" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="ReparatieSjabloonOmschrijving-e">
+    <simpleContent>
+      <extension base="DGO:ReparatieSjabloonOmschrijving" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="OnderhoudssjabloonOmschrijving-e">
+    <simpleContent>
+      <extension base="DGO:OnderhoudssjabloonOmschrijving" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="VerhuurbaarPerDatum-e">
+    <simpleContent>
+      <extension base="DGO:VerhuurbaarPerDatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="VerhuurbaarPerDatumDefinitief-e">
+    <simpleContent>
+      <extension base="DGO:VerhuurbaarPerDatumDefinitief" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="gasElektraControleDatum-e">
+    <simpleContent>
+      <extension base="DGO:gasElektraControleDatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="garantieAantal-e">
+    <simpleContent>
+      <extension base="DGO:garantieAantal" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="zelfAangebrachteVoorzieningAantal-e">
+    <simpleContent>
+      <extension base="DGO:zelfAangebrachteVoorzieningAantal" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="AanmaakDatum-e">
+    <simpleContent>
+      <extension base="DGO:AanmaakDatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="AanmaakTijd-e">
+    <simpleContent>
+      <extension base="DGO:AanmaakTijd" />
+    </simpleContent>
+  </complexType>
+  
+  <complexType name="Handtekening-e">
+    <simpleContent>
+      <extension base="DGO:Handtekening" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="HuurderNietAkkoord-e">
+    <simpleContent>
+      <extension base="DGO:HuurderNietAkkoord" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="HuurderNietThuis-e">
+    <simpleContent>
+      <extension base="DGO:HuurderNietThuis" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Ingangsdatum-e">
+    <simpleContent>
+      <extension base="DGO:Ingangsdatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="UitTeVoerenAantal-e">
+    <simpleContent>
+      <extension base="DGO:UitTeVoerenAantal" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="AfhandelDuur-e">
+    <simpleContent>
+      <extension base="DGO:AfhandelDuur" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="OnderhoudstaakVerhaalbareKosten-e">
+    <simpleContent>
+      <extension base="DGO:OnderhoudstaakVerhaalbareKosten" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Standaardtaakomschrijving-e">
+    <simpleContent>
+      <extension base="DGO:Standaardtaakomschrijving" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Verkoopwijze-e">
+    <simpleContent>
+      <extension base="DGO:Verkoopwijze" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Meternummer-e">
+    <simpleContent>
+      <extension base="DGO:Meternummer" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="VloeistofKleur-e">
+    <simpleContent>
+      <extension base="DGO:VloeistofKleur" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Meterstand-e">
+    <simpleContent>
+      <extension base="DGO:Meterstand" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="BeginstandDatum-e">
+    <simpleContent>
+      <extension base="DGO:BeginstandDatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="EindstandDatum-e">
+    <simpleContent>
+      <extension base="DGO:EindstandDatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="SleutelOmschrijving-e">
+    <simpleContent>
+      <extension base="DGO:SleutelOmschrijving" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="SleutelAantal-e">
+    <simpleContent>
+      <extension base="DGO:SleutelAantal" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Projectnaam-e">
+    <simpleContent>
+      <extension base="DGO:Projectnaam" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Projectomschrijving-e">
+    <simpleContent>
+      <extension base="DGO:Projectomschrijving" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Projectbegindatum-e">
+    <simpleContent>
+      <extension base="DGO:Projectbegindatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="Projecteinddatum-e">
+    <simpleContent>
+      <extension base="DGO:Projecteinddatum" />
+    </simpleContent>
+  </complexType>
+
+  <complexType name="MaximumAantalAfspraken-e">
+    <simpleContent>
+      <extension base="DGO:MaximumAantalAfspraken" />
+    </simpleContent>
+  </complexType>
+
+  <!-- Simple Types voor metagegevens-->
+  <simpleType name="AanHuurderDoorbelastBedrag">
+    <restriction base="decimal">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Keuzeboomstapomschrijving">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Onderhoudsverzoekmeldtijd">
+    <restriction base="StUF:Tijdstip">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="VoorkeursDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="OpgelostDoorTips">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="OplossingsTip">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="OplossingsTipCode">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="WijzigingToestaan">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="WijzigingOmschrijvingOfFotoToestaan">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="UitvoerDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="UitvoerStartTijd">
+    <restriction base="StUF:Tijdstip">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="UitvoerEindTijd">
+    <restriction base="StUF:Tijdstip">
+    </restriction>
+  </simpleType> 
+
+  <simpleType name="Opmerking">
+    <restriction base="string">
+    </restriction>
+  </simpleType> 
+
+  <simpleType name="HuurderAccepteertKosten">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Melding">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="AnnuleringsOmschrijving">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="IsAfspraakNoodzakelijk">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="UitersteGereedDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="TePlannenDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="KanOnderhoudsverzoekCreeren">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="WordenKostenDoorbelast">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="IsNacalculatie">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="HeeftServiceContract">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="WordtDoorbelastVanwegeOorzaak">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+  
+  <simpleType name="DoorTeBelastenBedrag">
+    <restriction base="decimal">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Zoekvoorwaarde">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="OplossingVoorDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="IsOorzaakCodeNoodzakelijk">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="InspectieDuur">
+    <restriction base="decimal">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="OplossingTitel">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="IsStandaardOorzaakCode">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Inspectie">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+ 
+  <simpleType name="BijlageTitel">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+  
+  <simpleType name="BijlageOmschrijving">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+  
+  <simpleType name="BijlageBestandsnaam">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+  
+  <simpleType name="BijlageExtensie">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+  
+  <simpleType name="Bijlage">
+    <restriction base="base64Binary">
+    </restriction>
+  </simpleType>
+  
+  <simpleType name="VerwijderingBijlageToestaan">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="IsOnderhoudToegestaanDoorEigenaar">
+    <restriction base="boolean">     
+    </restriction>
+  </simpleType>
+
+  <simpleType name="StandaardTakenSetCode">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="ReparatieSjabloonOmschrijving">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="OnderhoudssjabloonOmschrijving">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="VerhuurbaarPerDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="VerhuurbaarPerDatumDefinitief">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="gasElektraControleDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="garantieAantal">
+    <restriction base="integer">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="zelfAangebrachteVoorzieningAantal">
+    <restriction base="integer">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="AanmaakDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="AanmaakTijd">
+    <restriction base="StUF:Tijdstip">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Handtekening">
+    <restriction base="base64Binary">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="HuurderNietAkkoord">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="HuurderNietThuis">
+    <restriction base="boolean">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Ingangsdatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="UitTeVoerenAantal">
+    <restriction base="decimal">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="AfhandelDuur">
+    <restriction base="decimal">
+    </restriction>
+  </simpleType>
+  
+  <simpleType name="OnderhoudstaakVerhaalbareKosten">
+    <restriction base="decimal">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Standaardtaakomschrijving">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Verkoopwijze">
+    <restriction base="string">
+      <enumeration value="vasteprijs"/>
+      <enumeration value="nacalculatie"/>
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Meternummer">
+    <restriction base="string">
+      <maxLength value="20"/>
+    </restriction>
+  </simpleType>
+
+  <simpleType name="VloeistofKleur">
+    <restriction base="string">
+      <enumeration value=""/>
+      <enumeration value="groen"/>
+      <enumeration value="blauw"/>
+      <enumeration value="rood"/>
+      <enumeration value="geel"/>
+      <enumeration value="overig"/>
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Meterstand">
+    <restriction base="decimal">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="BeginstandDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="EindstandDatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="SleutelOmschrijving">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="SleutelAantal">
+    <restriction base="integer">
+    </restriction>
+  </simpleType>
+  
+  <simpleType name="Projectnaam">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Projectomschrijving">
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Projectbegindatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="Projecteinddatum">
+    <restriction base="StUF:Datum">
+    </restriction>
+  </simpleType>
+
+  <simpleType name="MaximumAantalAfspraken">
+    <restriction base="integer">
+    </restriction>
+  </simpleType>
+
+</schema>

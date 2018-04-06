@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+             xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+             xmlns:WRV="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+             targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301" name="StUF-VERA0301" >
+  <import namespace="http://www.egem.nl/StUF/StUF0301" location="../../0301/stuf0301_types.wsdl" />
+  <!--
+       <documentation>
+           Dit document definieert de webservices voor het portType OntvangAsynchroon voor de kennisgevingen in het sectormodel Basisgegevens.
+       </documentation>
+  -->
+  <types>
+    <xs:schema>
+      <xs:import namespace="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301" schemaLocation="wrv01_msg_mutatie.xsd"/>
+    </xs:schema>
+  </types>
+  <message name="wrvkanLk01">
+    <part name="body" element="WRV:wrvkanLk01" />
+  </message>
+  <message name="wrveenLk01">
+    <part name="body" element="WRV:wrveenLk01" />
+  </message>
+  <message name="wrvpubLk03">
+    <part name="body" element="WRV:wrvpubLk03" />
+  </message>
+  <message name="wrvtoeLk03">
+    <part name="body" element="WRV:wrvtoeLk03" />
+  </message>
+  <portType name="OntvangAsynchroon">
+    <documentation>Dit portType ondersteunt als operaties alle asynchrone berichten gedefinieerd binnen het sectormodel</documentation>
+    <operation name="Bv01">
+      <input message="StUF:Bv01" />
+      <output message="StUF:Bv03" />
+      <fault name="fout" message="StUF:Fo03" />
+    </operation>
+    <operation name="Bv03">
+      <input message="StUF:Bv03" />
+      <output message="StUF:Bv03" />
+      <fault name="fout" message="StUF:Fo03" />
+    </operation>
+    <operation name="Fo01">
+      <input message="StUF:Fo01" />
+      <output message="StUF:Bv03" />
+      <fault name="fout" message="StUF:Fo03" />
+    </operation>
+    <operation name="Fo03">
+      <input message="StUF:Fo03" />
+      <output message="StUF:Bv03" />
+      <fault name="fout" message="StUF:Fo03" />
+    </operation>
+    <operation name="wrveenLk01">
+      <input message="WRV:wrveenLk01" />
+      <output message="StUF:Bv03" />
+      <fault name="fout" message="StUF:Fo03" />
+    </operation>
+    <operation name="wrvkanLk01">
+      <input message="WRV:wrvkanLk01" />
+      <output message="StUF:Bv03" />
+      <fault name="fout" message="StUF:Fo03" />
+    </operation>
+    <operation name="wrvpubLk03">
+      <input message="WRV:wrvpubLk03" />
+      <output message="StUF:Bv03" />
+      <fault name="fout" message="StUF:Fo03" />
+    </operation>
+    <operation name="wrvtoeLk03">
+      <input message="WRV:wrvtoeLk03" />
+      <output message="StUF:Bv03" />
+      <fault name="fout" message="StUF:Fo03" />
+    </operation>
+  </portType>
+  <binding name="SOAPOntvangAsynchroon" type="WRV:OntvangAsynchroon">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <!--
+           <documentation>
+               Omdat de uit te wisselen berichten volledig gedefinieerd zijn in het sectormodel cq de StUF-standaard, kunnen we ze zonder verdere encoding (literal) opnemen in de body.
+               Niet ondersteunde berichten kunnen uit de binding en portType worden verwijderd.
+           </documentation>
+       -->
+    <operation name="Bv01">
+      <soap:operation soapAction="http://www.egem.nl/StUF/StUF0301/Bv01" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+    <operation name="Bv03">
+      <soap:operation soapAction="http://www.egem.nl/StUF/StUF0301/Bv03" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+    <operation name="Fo01">
+      <soap:operation soapAction="http://www.egem.nl/StUF/StUF0301/Fo01" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+    <operation name="Fo03">
+      <soap:operation soapAction="http://www.egem.nl/StUF/StUF0301/Fo03" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+    <operation name="wrvkanLk01">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301/wrvkanLk01" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+    <operation name="wrveenLk01">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301/wrveenLk01" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+    <operation name="wrvpubLk03">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301/wrvpubLk03" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+    <operation name="wrvtoeLk03">
+      <soap:operation soapAction="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301/wrvtoeLk03" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fout">
+        <soap:fault name="fout" use="literal" />
+      </fault>
+    </operation>
+
+  </binding>
+  <service name="OntvangAsynchroon">
+    <documentation>
+      Hieronder wordt de concreet aan te roepen service voor het ontvangen van asynchrone BG0301-berichten gedefinieerd.
+    </documentation>
+    <port name="OntvangAsynchroon" binding="WRV:SOAPOntvangAsynchroon">
+      <soap:address location="http://example.com/OntvangAsynchroon" />
+      <!--
+                   <documentation>
+                       <wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+                   </documentation>
+               -->
+    </port>
+  </service>
+</definitions>

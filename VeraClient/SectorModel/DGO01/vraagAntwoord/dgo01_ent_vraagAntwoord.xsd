@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema
+    xmlns="http://www.w3.org/2001/XMLSchema" 
+    xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+    xmlns:DGO="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301" 
+    xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+    targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/dagelijksonderhoud/0301" 
+    elementFormDefault="qualified" 
+    attributeFormDefault="unqualified" 
+    version="3.1">
+
+  <include schemaLocation="../entiteiten/dgo01_ent_basis.xsd"/>
+  <import namespace="http://www.stichting-vera.nl/StUF/sector/vera/0310" schemaLocation="../../VERA0301/entiteiten/vera0301_ent_basis.xsd"/>
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../VERA0301/entiteiten/vera0301_stuf_simpleTypes.xsd"/>
+
+  <complexType name="DGOOND-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOOND-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOOND-vraag">
+    <complexContent>
+      <extension base="DGO:DGOOND-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOPLN-vraag">
+    <sequence minOccurs="0">
+      <element name="onderhoudsverzoek" type="VERA:ONDOND-kerngegevens" nillable="true" minOccurs="0"/>
+      <element name="tePlannenDatum" type="DGO:TePlannenDatum-e" nillable="true" minOccurs="0"/>
+      <element name="maximumAantalAfspraken" type="DGO:MaximumAantalAfspraken-e" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOPLN-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOPLN-basis">
+        <sequence minOccurs="0">
+          <element name="isAfspraakNoodzakelijk" type="DGO:IsAfspraakNoodzakelijk-e" nillable="true" minOccurs="0"/>
+          <element name="uitersteGereedDatum" type="DGO:UitersteGereedDatum-e" nillable="true" minOccurs="0"/>
+          <element name="melding" type="DGO:Melding-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOKOC-vraag">
+    <sequence minOccurs="0">
+      <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+      <element name="keuzeboomstap" type="DGO:DGOKBS-kerngegevens" nillable="true" minOccurs="0"/>
+      <element name="reparatiesjabloon" type="DGO:DGORSJ-kerngegevens" nillable="true" minOccurs="0"/>
+      <element name="oorzaak" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOKOC-antwoord">
+    <sequence minOccurs="0">
+      <element name="kanOnderhoudsverzoekCreeren" type="DGO:KanOnderhoudsverzoekCreeren-e" nillable="true" minOccurs="0"/>
+      <element name="melding" type="DGO:Melding-e" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOKHU-vraag">
+    <sequence minOccurs="0">
+      <element name="huurder" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+      <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+      <element name="keuzeboomstap" type="DGO:DGOKBS-kerngegevens" nillable="true" minOccurs="0"/>
+      <element name="reparatiesjabloon" type="DGO:DGORSJ-kerngegevens" nillable="true" minOccurs="0"/>
+      <element name="oorzaak" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOKHU-antwoord">
+    <sequence minOccurs="0">
+      <element name="wordenKostenDoorbelast" type="DGO:WordenKostenDoorbelast-e" nillable="true" minOccurs="0"/>
+      <element name="isNacalculatie" type="DGO:IsNacalculatie-e" nillable="true" minOccurs="0"/>
+      <element name="heeftServiceContract" type="DGO:HeeftServiceContract-e" nillable="true" minOccurs="0"/>
+      <element name="wordtDoorbelastVanwegeOorzaak" type="DGO:WordtDoorbelastVanwegeOorzaak-e" nillable="true" minOccurs="0"/>
+      <element name="doorTeBelastenBedrag" type="DGO:DoorTeBelastenBedrag-e" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGORMS-vraag">
+    <complexContent>
+      <extension base="DGO:DGOKBS-basis">
+        <sequence minOccurs="0">
+          <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+          <element name="zoekvoorwaarde" type="DGO:Zoekvoorwaarde-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGORMS-antwoord">
+    <complexContent>
+      <extension base="DGO:DGORMS-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOBWE-vraag">
+    <complexContent>
+      <extension base="DGO:DGOKBS-basis">
+        <sequence minOccurs="0">
+          <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+          <element name="zoekvoorwaarde" type="DGO:Zoekvoorwaarde-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOBWE-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOBWE-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOODL-vraag">
+    <complexContent>
+      <extension base="DGO:DGOKBS-basis">
+        <sequence minOccurs="0">
+          <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+          <element name="zoekvoorwaarde" type="DGO:Zoekvoorwaarde-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOODL-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOODL-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOGBR-vraag">
+    <complexContent>
+      <extension base="DGO:DGOKBS-basis">
+        <sequence minOccurs="0">
+          <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+          <element name="zoekvoorwaarde" type="DGO:Zoekvoorwaarde-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOGBR-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOGBR-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOSPC-vraag">
+    <complexContent>
+      <extension base="DGO:DGOKBS-basis">
+        <sequence minOccurs="0">
+          <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="zoekvoorwaarde" type="DGO:Zoekvoorwaarde-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOSPC-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOSPC-basis">
+        <sequence minOccurs="0">
+          <element name="reparatiesjabloon" type="DGO:DGORSJ-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="actie" type="VERA:ALGREF-basis" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="isOorzaakCodeNoodzakelijk" type="DGO:IsOorzaakCodeNoodzakelijk-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="isAfspraakNoodzakelijk" type="DGO:IsAfspraakNoodzakelijk-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="afrondenVoorDatum" type="DGO:OplossingVoorDatum-e" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="keuzeboomStap" type="DGO:DGOKBS-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOORZ-vraag">
+    <complexContent>
+      <extension base="DGO:DGOORZ-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOORZ-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOORZ-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+    
+  <complexType name="DGORSJ-antwoord">
+    <complexContent>
+      <extension base="DGO:DGORSJ-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGORSJ-vraag">
+    <complexContent>
+      <restriction base="DGO:DGORSJ-basis">
+        <sequence minOccurs="0">
+          <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOBLG-vraag">
+    <complexContent>
+      <extension base="DGO:DGOBLG-basis">
+        <sequence minOccurs="0">
+          <element name="afspraak" type="VERA:RELAFS-kerngegevens" nillable="true" minOccurs="0"/>
+          <element name="onderhoudsverzoek" type="VERA:ONDOND-kerngegevens" nillable="true" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <complexType name="DGOBLG-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOBLG-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOIOT-vraag">
+    <sequence minOccurs="0">
+      <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <element name="huurder" type="VERA:RELREL-kerngegevens" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOIOT-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOIOT-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOINS-vraag">
+    <complexContent>
+      <extension base="DGO:DGOINS-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOINS-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOINS-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOSTT-vraag">
+    <complexContent>
+      <extension base="DGO:DGOSTT-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOSTT-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOSTT-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+ 
+  <complexType name="DGOOSJ-vraag">
+    <complexContent>
+      <restriction base="DGO:DGOOSJ-basis">
+        <sequence minOccurs="0">
+          <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOOSJ-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOOSJ-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOOHT-vraag">
+    <sequence minOccurs="0">
+      <element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  
+  <complexType name="DGOOHT-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOOHT-basis">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOOVH-vraag">
+    <sequence minOccurs="0">
+      <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+    </sequence>   
+  </complexType>
+
+  <complexType name="DGOOVH-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOOND-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOKCO-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOKCO-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOEEH-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOEEH-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOMST-vraag">
+    <sequence minOccurs="0">
+      <element name="eenheid" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOMST-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOMST-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOMSO-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOMSO-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOSLE-vraag">
+    <sequence minOccurs="0">
+      <element name="identificatie" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOSLE-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOSLE-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOMUS-vraag">
+    <sequence minOccurs="0">
+      <element name="identificatie" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOMUS-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOMUS-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOMUT-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOMUT-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOPRJ-vraag">
+    <sequence minOccurs="0">
+      <element name="identificatie" type="VERA:VASEEN-kerngegevens" nillable="true" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="DGOPRJ-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOPRJ-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="DGOLND-antwoord">
+    <complexContent>
+      <extension base="DGO:DGOLND-basis">
+      </extension>
+    </complexContent>
+  </complexType>
+
+</schema>

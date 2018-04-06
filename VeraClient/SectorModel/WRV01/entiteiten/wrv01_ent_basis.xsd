@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+        xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+        xmlns:VERA="http://www.stichting-vera.nl/StUF/sector/vera/0310"
+        xmlns:WRV="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+        xmlns:base="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301"
+        targetNamespace="http://www.stichting-vera.nl/StUF/verticaal/woonruimteverdeling/0301">
+  <import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="../../VERA0301/entiteiten/vera0301_stuf_simpleTypes.xsd"/>
+  <import namespace="http://www.stichting-vera.nl/StUF/sector/vera/0310" schemaLocation="./wrv01_vera_ent_basis-restricted.xsd"/>
+  <include schemaLocation="./wrv01_simpleTypes.xsd"/>
+
+  <annotation>
+    <documentation xml:lang="nl">
+      Bestand met kennisgevingberichten. Dit zijn extenties op de horizontale of restricted varianten.
+    </documentation>
+  </annotation>
+
+  <!-- Relaties -->
+  <complexType name="RELNAT-basis">
+    <complexContent>
+      <extension base="VERA:RELNAT-restricted">
+        <sequence minOccurs="0">
+          <!--<element name="soort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="voornaam" type="VERA:NatuurlijkPersoonvoornaam-e" nillable="true" minOccurs="0"/>
+          <element name="initialen" type="VERA:NatuurlijkPersooninitialen-e" nillable="true" minOccurs="0"/>
+          <element name="tussenvoegsels" type="VERA:NatuurlijkPersoontussenvoegsels-e" nillable="true" minOccurs="0"/>
+          <element name="achternaam" type="VERA:NatuurlijkPersoonachternaam-e" nillable="true" minOccurs="0"/>
+          <element name="roepnaam" type="VERA:NatuurlijkPersoonroepnaam-e" nillable="true" minOccurs="0"/>
+          <element name="geslacht" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="geboortedatum" type="VERA:NatuurlijkPersoongeboortedatum-e" nillable="true" minOccurs="0"/>
+          <element name="bsn" type="VERA:NatuurlijkPersoonbsn-e" nillable="true" minOccurs="0"/>
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="informatieobjecten" type="VERA:RELNATDOSINF-basis" nillable="true" minOccurs="0" />
+          -->
+          <element name="informatieobjecten" type="WRV:RELRELDOSINF-basis" minOccurs="0" nillable="true" />
+          <element name="adressen" type="WRV:RELRELRELADR-basis" nillable="true" minOccurs="0" />
+          <element name="contactgegevens" type="WRV:RELRELRELCOG-basis" nillable="true" minOccurs="0" />
+          <element name="signaleringen" type="WRV:RELNATRELSIG-basis" nillable="true" minOccurs="0" />
+          <element name="inkomens" type="WRV:RELNATRELINK-basis" nillable="true" minOccurs="0" />
+          <element name="opleiding" type="VERA:RELOPL-restricted" nillable="true" minOccurs="0"  maxOccurs="1" />
+          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RELADR-basis">
+    <complexContent>
+      <extension base="VERA:RELADR-restricted" >
+        <sequence minOccurs="0">
+          <!--<element name="soort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="sturingslabels" type="ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+          <element name="adres" type="WRV:VASADR-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="postadres" type="WRV:VASPOS-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="buitenlandsAdres" type="WRV:VASBUI-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="RELREL-kerngegeven">
+    <annotation>
+      <documentation>Relatie kerngegeven in WRV domein</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:RELREL-kerngegeven-restricted">
+        <sequence minOccurs="0">
+          <!--<element name="identificatie" type="StUF:Sleutel-e" nillable="true" minOccurs="0"/>
+          <element name="soort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>-->
+          <element name="code" type="VERA:Relatiecode-e" nillable="true" minOccurs="0"/>
+          <element name="naam" type="VERA:Rechtspersoonnaam-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RELRELRELADR-basis">
+    <annotation>
+      <documentation>Associatie naar adressen</documentation>
+    </annotation>
+    <sequence>
+      <element name="relatieAdres" type="WRV:RELADR-basis" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="RELRELRELADR"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+  <complexType name="RELRELRELCOG-basis">
+    <annotation>
+      <documentation>Associatie naar contactgegevens</documentation>
+    </annotation>
+    <sequence>
+      <element name="contactgegeven" type="VERA:RELTEL-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="RELRELRELCOG"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+  <complexType name="RELNATRELSIG-basis">
+    <annotation>
+      <documentation>Associatie naar signalering</documentation>
+    </annotation>
+    <sequence>
+      <element name="signalering" type="VERA:RELSIG-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="RELNATRELSIG"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+  <complexType name="RELNATRELINK-basis">
+    <annotation>
+      <documentation>Associatie naar inkomens</documentation>
+    </annotation>
+    <sequence>
+      <element name="inkomen" type="VERA:RELINK-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="RELNATRELINK"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+  <complexType name="RELRELDOSINF-basis">
+    <annotation>
+      <documentation>Associatie naar informatieobjecten</documentation>
+    </annotation>
+    <sequence>
+      <element name="informatieobject" type="VERA:DOSINF-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="RELNATDOSINF"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+
+  <!-- Vastgoed -->
+  <complexType name="VASEEN-basis">
+    <annotation>
+      <documentation xml:lang ="nl">
+        Eenheid specifiek voor het verticale woonruimteverdeling sectormodel.
+        De eenheid wordt in een andere context gebruikt dan het horizontale model.
+        De attributen worden extended en restricted waardoor er een nieuwe entiteit ontstaat.
+      </documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:VASEEN-restricted">
+        <sequence minOccurs="0">
+          <!--<element name="code" type="VERA:Eenheidcode-e" nillable="true" minOccurs="0"/>
+          <element name="soort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="detailSoort" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="status" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="detailStatus" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="naam" type="VERA:Eenheidnaam-e" nillable="true" minOccurs="0"/>
+          <element name="omschrijving" type="VERA:Eenheidomschrijving-e" nillable="true" minOccurs="0"/>
+          <element name="kadastraalNummer" type="VERA:EenheidkadastraalNummer-e" nillable="true" minOccurs="0"/>
+          <element name="rayon" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="etage" type="VERA:Eenheidetage-e" nillable="true" minOccurs="0"/>
+          <element name="inExploitatieReden" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="uitExploitatieReden" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="inExploitatiedatum" type="VERA:EenheidinExploitatiedatum-e" nillable="true" minOccurs="0"/>
+          <element name="uitExploitatiedatum" type="VERA:EenheiduitExploitatiedatum-e" nillable="true" minOccurs="0"/>
+          <element name="bewoonbareVertrekkenTotaalInhoud" type="VERA:EenheidbewoonbareVertrekkenTotaalInhoud-e" nillable="true" minOccurs="0"/>
+          <element name="vertrekken" type="VERA:VASEENVASVER-basis" nillable="true" minOccurs="0" />
+          <element name="kamersAantal" type="VERA:EenheidkamersAantal-e" nillable="true" minOccurs="0"/>
+          <element name="verwarmdeVertrekkenAantal" type="VERA:EenheidverwarmdeVertrekkenAantal-e" nillable="true" minOccurs="0"/>
+          <element name="totaleOppervlakte" type="VERA:EenheidtotaleOppervlakte-e" nillable="true" minOccurs="0"/>
+          <element name="woonvertrekInhoud" type="VERA:EenheidwoonvertrekInhoud-e" nillable="true" minOccurs="0"/>
+          <element name="vertrekkenAantal" type="VERA:EenheidvertrekkenAantal-e" nillable="true" minOccurs="0"/>
+          <element name="woonvertrekkenTotaalOppervlakte" type="VERA:EenheidwoonvertrekkenTotaalOppervlakte-e" nillable="true" minOccurs="0"/>
+          <element name="overigeVertrekkenTotaalOppervlakte" type="VERA:EenheidoverigeVertrekkenTotaalOppervlakte-e" nillable="true" minOccurs="0"/>
+          <element name="bestemming" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="doelgroep" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="woonvorm" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="zelfstandig" type="VERA:Eenheidzelfstandig-e" nillable="true" minOccurs="0"/>
+          <element name="zorgfaciliteitOmschrijving" type="VERA:EenheidzorgfaciliteitOmschrijving-e" nillable="true" minOccurs="0"/>
+          <element name="kwaliteitsniveau" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="toegankelijkheidslabels" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="beschermdStadsgezicht" type="VERA:EenheidbeschermdStadsgezicht-e" nillable="true" minOccurs="0"/>
+          <element name="beginBouwdatum" type="VERA:EenheidbeginBouwdatum-e" nillable="true" minOccurs="0"/>
+          <element name="opleverdatum" type="VERA:Eenheidopleverdatum-e" nillable="true" minOccurs="0"/>
+          <element name="bouwnummer" type="VERA:Eenheidbouwnummer-e" nillable="true" minOccurs="0"/>
+          <element name="brutohuur" type="VERA:Eenheidbrutohuur-e" nillable="true" minOccurs="0"/>
+          <element name="subsidiabeleHuur" type="VERA:EenheidsubsidiabeleHuur-e" nillable="true" minOccurs="0"/>
+          <element name="streefhuur" type="VERA:Eenheidstreefhuur-e" nillable="true" minOccurs="0"/>
+          <element name="vraagprijs" type="VERA:Eenheidvraagprijs-e" nillable="true" minOccurs="0"/>
+          <element name="verkoop" type="VERA:Eenheidverkoop-e" nillable="true" minOccurs="0"/>
+          <element name="situering" type="VERA:Eenheidsituering-e" nillable="true" minOccurs="0"/>
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="maatschappelijkLabel" type="VERA:ALGREF-basis" nillable="true" minOccurs="0"/>
+          <element name="prijsconditie" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="klimaatbeheersing" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="liggingTuin" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="buitenruimten" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="interieur" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="isolatie" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="sanitair" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="energievoorzieningen" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="ligging" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />        
+          -->
+          <element name="clusters" type="WRV:VASEENVASCLU-basis" nillable="true" minOccurs="0" />
+          <element name="vertrekken" type="WRV:VASEENVASVER-basis" nillable="true" minOccurs="0" />
+          <element name="prijscomponenten" type="WRV:VASEENVASPRI-basis" nillable="true" minOccurs="0" />
+          <element name="voorwaarden" type="VERA:VASVOO-restricted" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="adres" type="WRV:VASADR-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="energieprestatie" type="VERA:VASENP-restricted" nillable="true" minOccurs="0" maxOccurs="1" />
+          <element name="informatieobjecten" type="WRV:VASEENDOSINF-basis" nillable="true" minOccurs="0" />
+          <element name="eigenaar" type="WRV:RELREL-kerngegeven" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="renovatie" type="VERA:VASREN-restricted" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="kenmerken" type="VERA:VASEENVASKEN-restricted" nillable="true" minOccurs="0" />
+          <element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VASEENVASCLU-basis">
+    <annotation>
+      <documentation>Associatie naar Cluster</documentation>
+    </annotation>
+    <sequence>
+      <element name="cluster" type="VERA:VASCLU-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="VASEENVASCLU"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+  <complexType name="VASEENVASVER-basis">
+    <annotation>
+      <documentation>Associatie naar Vertrek</documentation>
+    </annotation>
+    <sequence>
+      <element name="vertrek" type="WRV:VASVER-basis" minOccurs="0" maxOccurs="unbounded" />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="VASEENVASVER"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+  <complexType name="VASVER-basis">
+    <annotation>
+      <documentation>Vertrek</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:VASVER-restricted">
+        <sequence minOccurs="0">
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="VASGEOVASPUN-basis">
+    <annotation>
+      <documentation>Associatie naar Punten</documentation>
+    </annotation>
+    <sequence>
+      <element name="punt" type="VERA:VASPUN-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="VASGEOVASPUN"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+
+  <complexType name="VASADR-basis">
+    <annotation>
+      <documentation>Adres</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:VASADR-restricted">
+        <sequence minOccurs="0">
+          <element name="woonplaats" type="VERA:VASWOO-restricted" minOccurs="0" maxOccurs="1" nillable="true" />
+          <element name="buurt" type="VERA:VASBUU-restricted" minOccurs="0" maxOccurs="1" nillable="true" />
+          <element name="wijk" type="VERA:VASWIJ-restricted" minOccurs="0" maxOccurs="1" nillable="true" />
+          <element name="gemeente" type="VERA:VASGEM-restricted" minOccurs="0" maxOccurs="1" nillable="true" />
+          <element name="geometrie" type="WRV:VASGEOVASPUN-basis" minOccurs="0" maxOccurs="1" nillable="true" />
+          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="VASPOS-basis">
+    <annotation>
+      <documentation>Postadres</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:VASPOS-restricted">
+        <sequence minOccurs="0">
+          <element name="woonplaats" type="VERA:VASWOO-restricted" minOccurs="0" maxOccurs="1" nillable="true" />
+          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="VASBUI-basis">
+    <annotation>
+      <documentation>Buitenlands adres</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:VASBUI-restricted">
+        <sequence minOccurs="0">
+          <element name="geometrie" type="WRV:VASGEOVASPUN-basis" minOccurs="0" maxOccurs="1" nillable="true" />
+          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="VASEENVASPRI-basis">
+    <annotation>
+      <documentation>Associatie naar Prijscomponent</documentation>
+    </annotation>
+    <sequence>
+      <element name="prijscomponent" type="VERA:OVEPRI-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="VASEENVASPRI"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+  <complexType name="VASEENDOSINF-basis">
+    <annotation>
+      <documentation>Associatie naar informatieobjecten</documentation>
+    </annotation>
+    <sequence>
+      <element name="informatieobject" type="VERA:DOSINF-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="VASEENDOSINF"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+
+  <!-- Woonruimteverdeling -->
+  <complexType name="WOOPUB-basis">
+    <complexContent>
+      <extension base="VERA:WOOPUB-restricted">
+        <sequence minOccurs="0">
+          <!--<element name="code" type="VERA:Publicatiecode-e" nillable="true" minOccurs="0"/>
+          <element name="status" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="begindatum" type="VERA:Publicatiebegindatum-e" nillable="true" minOccurs="0"/>
+          <element name="einddatum" type="VERA:Publicatieeinddatum-e" nillable="true" minOccurs="0"/>
+          <element name="modules" type="VERA:ALGREFALGREF-restricted" nillable="true" minOccurs="0" />
+          <element name="looptijd" type="VERA:Publicatielooptijd-e" nillable="true" minOccurs="0"/>
+          <element name="aantalEenheden" type="VERA:PublicatieaantalEenheden-e" nillable="true" minOccurs="0"/>
+          <element name="aantalEenhedenBeschikbaar" type="VERA:PublicatieaantalEenhedenBeschikbaar-e" nillable="true" minOccurs="0"/>
+          <element name="advertentieUrl" type="VERA:PublicatieadvertentieUrl-e" nillable="true" minOccurs="0"/>
+          <element name="reactieUrl" type="VERA:PublicatiereactieUrl-e" nillable="true" minOccurs="0"/>
+          <element name="model" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="detailModel" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="intakevorm" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="contractvorm" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="taal" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="wachttijd" type="VERA:Publicatiewachttijd-e" nillable="true" minOccurs="0"/>
+          <element name="wachttijdMetVoorrang" type="VERA:PublicatiewachttijdMetVoorrang-e" nillable="true" minOccurs="0"/>
+          <element name="opleverdatum" type="VERA:Publicatieopleverdatum-e" nillable="true" minOccurs="0"/>
+          <element name="oplevering" type="VERA:Publicatieoplevering-e" nillable="true" minOccurs="0"/>
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="sturingslabels" type="ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+          <element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="WOOHUI-basis">
+    <complexContent>
+      <extension base="VERA:WOOHUI-restricted">
+        <sequence minOccurs="0">
+          <!--<element name="code" type="VERA:HuidigeGebruikercode-e" nillable="true" minOccurs="0"/>
+          <element name="Vertrekdatum" type="VERA:HuidigeGebruikerVertrekdatum-e" nillable="true" minOccurs="0"/>
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="sturingslabels" type="ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+          <element name="contactpersoon" type="VERA:WRVGBRRELNAT-restricted" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="contactgegevens" type="WRV:RELRELRELCOG-basis" nillable="true" minOccurs="0" />
+          <element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="WOOKAN-basis">
+    <annotation>
+      <documentation>
+        Kandidaat specifiek voor het verticale woonruimteverdeling sectormodel.
+        Deze kandidaat wordt in een andere context gebruikt dan het horizontale model.
+        De attributen worden extended en restricted waardoor er een nieuwe entiteit ontstaat.
+      </documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:WOOKAN-restricted">
+        <sequence minOccurs="0">
+          <!--<element name="code" type="VERA:Kandidaatcode-e" nillable="true" minOccurs="0"/>
+          <element name="positie" type="VERA:Kandidaatpositie-e" nillable="true" minOccurs="0"/>
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="status" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="detailStatus" type="VERA:ALGREF-restricted" nillable="true" minOccurs="0"/>
+          <element name="sturingslabels" type="ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+          <!-- TODO collectie maken -->
+          <element name="aanvrager" type="WRV:RELNAT-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="medeaanvrager" type="WRV:RELNAT-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="aantalVolwassenen" type="WRV:Kandidaataantalvolwassenen-e" nillable="true" minOccurs="0"/>
+          <element name="aantalKinderen" type="WRV:Kandidaataantalkinderen-e" nillable="true" minOccurs="0" />
+          <element name="verzamelinkomenEU" type="WRV:KandidaatverzamelinkomenEU-e" nillable="true" minOccurs="0" />
+          <element name="verzamelinkomen" type="WRV:Kandidaatverzamelinkomen-e" nillable="true" minOccurs="0" />
+          <element name="eenheid" type="WRV:VASEEN-kerngegevens" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="VASEEN-kerngegevens">
+    <annotation>
+      <documentation>Toewijzing</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:VASEEN-kerngegevens-restricted">
+        <sequence minOccurs="0">
+          <element name="code" type="VERA:Eenheidcode-e" nillable="true" minOccurs="0"/>
+          <element name="clusterCode" type="VERA:Clustercode-e" nillable="true" minOccurs="0"/>
+          <element name="bouwnummer" type="VERA:Eenheidbouwnummer-e" nillable="true" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <complexType name="WOOTOE-basis">
+    <annotation>
+      <documentation>Toewijzing</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:WOOTOE-restricted">
+        <sequence minOccurs="0">
+          <!--<element name="datum" type="VERA:Toewijzingdatum-e" nillable="true" minOccurs="0"/>
+          <element name="extraElementen" type="StUF:ExtraElementen" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="sturingslabels" type="ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>-->
+          <element name="overeenkomst" type="WRV:OVEOVE-basis" nillable="true" minOccurs="0"  maxOccurs="1" />
+          <element name="sturingslabels" type="VERA:ALGSTUALGSTU-restricted" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="OVEOVE-basis">
+    <annotation>
+      <documentation>Toewijzing</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="VERA:OVEOVE-restricted">
+        <sequence minOccurs="0">
+          <!--<element name="code" type="VERA:Overeenkomstcode-e" minOccurs="0" nillable="true" />
+          <element name="begindatum" type="VERA:Overeenkomstbegindatum-e" minOccurs="0" nillable="true" />
+          <element name="einddatum" type="VERA:Overeenkomsteinddatum-e" minOccurs="0" nillable="true" />
+          <element name="soort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="detailSoort" type="VERA:ALGREF-restricted" minOccurs="0" nillable="true" />
+          <element name="extraElementen" type="StUF:ExtraElementen" minOccurs="0" maxOccurs="1" nillable="true" />-->
+          <element name="prijscomponenten" type="WRV:OVEOVEOVEPRI-basis" minOccurs="0" nillable="true" /> 
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OVEOVEOVEPRI-basis">
+    <annotation>
+      <documentation>Associatie naar Prijscomponent</documentation>
+    </annotation>
+    <sequence>
+      <element name="prijscomponent" type="VERA:OVEPRI-restricted" minOccurs="0" maxOccurs="unbounded"  />
+    </sequence>
+    <attribute ref="StUF:entiteittype" fixed="VASEENVASPRI"/>
+    <attributeGroup ref="StUF:relatie"/>
+  </complexType>
+</schema>

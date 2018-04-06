@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:StUF="http://www.egem.nl/StUF/StUF0301" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.egem.nl/StUF/StUF0301" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.1">
+  <annotation>
+    <documentation>
+      Nieuw bestand in verband met nieuwe vera versie sectormodellen
+      Het schema met restrictions op de in StUF gedefinieerde simpleTypes en complexTypes gebruikt in de definitie van de basisentiteiten in vera0301.
+    </documentation>
+  </annotation>
+  <include schemaLocation="../../0301/stuf0301.xsd"/>
+  <!--Currently no restrictions on StUF types defined.-->
+</schema>
